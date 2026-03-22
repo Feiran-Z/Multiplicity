@@ -1,0 +1,30 @@
+# Frontend Styling Component Memory
+
+## Project Structure & Patterns
+- **Sass Architecture**: Well-organized partials in `_sass/` with `_variables.scss`, `_base.scss`, `_components.scss`, `_layout.scss`, `_typography.scss`, `_main-bundle.scss`
+- **Color System**: Defined in `_variables.scss` with semantic names (primary: #880112, secondary: #A53A4A, accent: #3A6B6B, background: #F8FAFC, surface: #FFFFFF)
+- **Typography**: Inter (sans-serif) for body, Cinzel Decorative (serif) for headings
+- **Spacing Scale**: 8px base unit with consistent spacing variables ($spacing-1 to $spacing-24)
+- **Breakpoints**: Mobile-first with sm: 640px, md: 768px, lg: 1024px, xl: 1280px, 2xl: 1536px
+
+## Component Patterns
+- **Card Pattern**: `.card` class with hover effects, consistent padding, border-radius, and shadows
+- **Button System**: `.button` base with `.button-primary`, `.button-secondary`, `.button-text` variants
+- **Form Components**: Consistent `.form-input`, `.form-textarea`, `.form-select` with focus states
+- **Navigation**: Sticky header with responsive mobile menu
+- **Post Components**: Basic `.post-header`, `.post-title`, `.post-meta`, `.post-content`, `.post-footer` exist but need enhancement
+
+## Blog Post Styling Implementation
+- **Enhanced Layout**: Updated `_layouts/post.html` with container wrappers and improved structure
+- **Section Styling**: Created comprehensive post section styles in `_components.scss` (lines 615-750)
+- **Visual Sections**: MLA Citation (teal accent), Summary (clean), Key Contributions (primary burgundy), Related Papers (secondary burgundy), Tags
+- **Typography Hierarchy**: Enhanced with Cinzel Decorative for headings, Inter for body, responsive sizing
+- **Navigation**: Grid-based previous/next navigation with card styling
+- **Sample Post**: Created `_posts/2026-03-22-sample-enhanced-blog-post.md` demonstrating all features
+- **Updated Posts**: Enhanced existing posts with new section structure
+
+## Design Patterns Established
+- **Section-Based Architecture**: Modular `.post-section-{type}` classes for each content section
+- **Color Block Strategy**: Subtle background colors with borders for visual separation
+- **Responsive Grid Navigation**: Previous/next links in grid layout that stacks on mobile
+- **Accessible Components**: Proper focus states, semantic HTML, WCAG AA contrast compliance
