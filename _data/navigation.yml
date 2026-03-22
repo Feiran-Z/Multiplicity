@@ -1,0 +1,17 @@
+- name: "Home"
+  link: "/"
+
+- name: "About"
+  link: "/about/"
+
+- name: "Courses"
+  link: "/courses/"
+
+- name: "Resources"
+  link: "/resources/"
+
+- name: "Blog"
+  link: "/blog/"
+
+- name: "Contact"
+  link: "/contact/"

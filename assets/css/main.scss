@@ -1,0 +1,577 @@
+---
+# Front matter to tell Jekyll to process this file
+---
+
+// Import all Sass partials
+@import "variables";
+@import "base";
+@import "typography";
+@import "layout";
+@import "components";
+
+// Homepage banner styles
+.banner {
+  background-color: $color-primary;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: $spacing-8;
+  position: relative;
+  overflow: hidden;
+  transition: height $transition-normal $transition-timing,
+              padding $transition-normal $transition-timing;
+
+  @media (max-width: $breakpoint-sm) {
+    min-height: 90vh;
+    padding: $spacing-6;
+  }
+}
+
+.banner-content {
+  max-width: 800px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.banner-title {
+  font-family: $font-secondary;
+  font-size: $font-size-6xl;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  margin-bottom: $spacing-6;
+  color: white;
+  transition: font-size $transition-normal $transition-timing;
+
+  @media (max-width: $breakpoint-sm) {
+    font-size: $font-size-4xl;
+  }
+}
+
+.banner-typewriter {
+  font-family: $font-primary;
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-light;
+  line-height: $line-height-normal;
+  color: rgba(white, 0.9);
+  min-height: 2.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: $breakpoint-sm) {
+    font-size: $font-size-xl;
+  }
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1.2em;
+  background-color: white;
+  margin-left: 2px;
+  animation: blink 1s infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    opacity: 0.7;
+  }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.banner-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: $spacing-4 $spacing-6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+  transition: opacity $transition-normal $transition-timing;
+  z-index: 2;
+
+  @media (max-width: $breakpoint-lg) {
+    padding: $spacing-4;
+  }
+}
+
+.banner-logo {
+  font-family: $font-secondary;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: white;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity $transition-normal $transition-timing;
+}
+
+.banner-nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: $spacing-6;
+  opacity: 0;
+  transition: opacity $transition-normal $transition-timing;
+
+  @media (max-width: $breakpoint-lg) {
+    display: none;
+  }
+}
+
+.banner-nav-link {
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: white;
+  text-decoration: none;
+  transition: color $transition-normal $transition-timing;
+
+  &:hover {
+    color: rgba(white, 0.8);
+  }
+}
+
+// Banner shrunk state
+.banner--shrunk {
+  height: 70px;
+  min-height: 70px;
+  padding: 0;
+
+  .banner-content {
+    display: none;
+  }
+
+  .banner-title {
+    font-size: $font-size-xl;
+    margin: 0;
+  }
+
+  .banner-nav {
+    opacity: 1;
+  }
+
+  .banner-logo {
+    opacity: 1;
+  }
+
+  .banner-nav-links {
+    opacity: 1;
+  }
+}
+
+// Scroll indicator
+.scroll-indicator {
+  position: absolute;
+  bottom: $spacing-8;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(white, 0.7);
+  font-size: $font-size-sm;
+  text-align: center;
+  opacity: 1;
+  transition: opacity $transition-normal $transition-timing;
+
+  @media (prefers-reduced-motion: reduce) {
+    display: none;
+  }
+}
+
+.scroll-indicator-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin: 0 auto $spacing-2;
+  animation: bounce 2s infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+.banner--shrunk .scroll-indicator {
+  opacity: 0;
+}
+
+// Course cards
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: $spacing-6;
+  margin: $spacing-8 0;
+
+  @media (min-width: $breakpoint-sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.course-card {
+  background-color: $color-surface;
+  border-radius: $border-radius-xl;
+  box-shadow: $shadow-md;
+  padding: $spacing-6;
+  transition: transform $transition-normal $transition-timing,
+              box-shadow $transition-normal $transition-timing;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-lg;
+  }
+}
+
+.course-card-header {
+  margin-bottom: $spacing-4;
+  padding-bottom: $spacing-4;
+  border-bottom: 1px solid $color-gray-200;
+}
+
+.course-card-title {
+  font-family: $font-primary;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-2;
+}
+
+.course-card-level {
+  display: inline-block;
+  padding: $spacing-1 $spacing-3;
+  border-radius: $border-radius-full;
+  font-family: $font-primary;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  background-color: $color-gray-100;
+  color: $color-text-secondary;
+}
+
+.course-card-body {
+  flex: 1;
+  margin-bottom: $spacing-4;
+}
+
+.course-card-description {
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  color: $color-text-secondary;
+  line-height: $line-height-normal;
+}
+
+.course-card-footer {
+  padding-top: $spacing-4;
+  border-top: 1px solid $color-gray-200;
+}
+
+// Poem section
+.poem-section {
+  background-color: $color-gray-50;
+  padding: $spacing-12 0;
+  margin: $spacing-12 0;
+}
+
+.poem-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.poem-title {
+  font-family: $font-secondary;
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  text-align: center;
+  margin-bottom: $spacing-6;
+}
+
+.poem-author {
+  font-family: $font-primary;
+  font-size: $font-size-lg;
+  font-style: italic;
+  color: $color-text-secondary;
+  text-align: center;
+  margin-bottom: $spacing-8;
+}
+
+.poem-content {
+  font-family: $font-primary;
+  font-size: $font-size-lg;
+  color: $color-text-primary;
+  line-height: $line-height-relaxed;
+  white-space: pre-line;
+}
+
+.poem-stanza {
+  margin-bottom: $spacing-6;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Personal story section
+.personal-story {
+  padding: $spacing-12 0;
+  background-color: $color-surface;
+}
+
+.story-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.story-title {
+  font-family: $font-secondary;
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  text-align: center;
+  margin-bottom: $spacing-6;
+}
+
+.story-content {
+  font-family: $font-primary;
+  font-size: $font-size-lg;
+  color: $color-text-primary;
+  line-height: $line-height-relaxed;
+
+  p {
+    margin-bottom: $spacing-6;
+  }
+}
+
+.story-placeholder {
+  background-color: $color-gray-100;
+  border: 2px dashed $color-gray-300;
+  border-radius: $border-radius-lg;
+  padding: $spacing-8;
+  text-align: center;
+  color: $color-text-secondary;
+  font-style: italic;
+}
+
+// Contact form
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: $spacing-4;
+  margin-top: $spacing-6;
+}
+
+// Social links
+.social-links {
+  display: flex;
+  gap: $spacing-4;
+  margin-top: $spacing-6;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: $border-radius-full;
+  background-color: $color-gray-100;
+  color: $color-text-secondary;
+  text-decoration: none;
+  transition: background-color $transition-normal $transition-timing,
+              color $transition-normal $transition-timing;
+
+  &:hover {
+    background-color: $color-primary;
+    color: white;
+  }
+}
+
+// Blog listing
+.blog-list {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: $spacing-6;
+  margin: $spacing-8 0;
+
+  @media (min-width: $breakpoint-sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.blog-post-card {
+  @extend .card;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.blog-post-card-title {
+  font-family: $font-primary;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-2;
+}
+
+.blog-post-card-meta {
+  font-family: $font-primary;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  margin-bottom: $spacing-4;
+}
+
+.blog-post-card-excerpt {
+  flex: 1;
+  margin-bottom: $spacing-4;
+}
+
+.blog-post-card-link {
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: $color-primary;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-2;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Resources grid
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: $spacing-6;
+  margin: $spacing-8 0;
+
+  @media (min-width: $breakpoint-sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.resource-card {
+  @extend .card;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.resource-card-icon {
+  font-size: $font-size-4xl;
+  color: $color-primary;
+  margin-bottom: $spacing-4;
+}
+
+.resource-card-title {
+  font-family: $font-primary;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-2;
+}
+
+.resource-card-description {
+  flex: 1;
+  margin-bottom: $spacing-4;
+}
+
+.resource-card-link {
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: $color-primary;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-2;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Print styles
+@media print {
+  .site-header,
+  .site-footer,
+  .banner,
+  .scroll-indicator,
+  .menu-toggle {
+    display: none !important;
+  }
+
+  body {
+    background-color: white;
+    color: black;
+    font-size: 12pt;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+
+  .page-content,
+  .post-content {
+    margin-bottom: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+
+  p, ul, ol, dl {
+    page-break-inside: avoid;
+  }
+
+  pre, blockquote {
+    page-break-inside: avoid;
+  }
+
+  table {
+    page-break-inside: avoid;
+  }
+
+  img {
+    page-break-inside: avoid;
+    page-break-after: avoid;
+  }
+}

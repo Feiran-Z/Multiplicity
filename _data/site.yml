@@ -1,0 +1,31 @@
+# Site metadata and configuration
+
+site_name: "Multiplicity: Roads Not Taken"
+tagline: "Explore the roads not taken"
+description: "An educational website on causal inference, exploring alternative paths - the 'what ifs' - as in Rubin's potential outcomes model."
+
+courses:
+  - title: "Empirical Research Fundamentals"
+    description: "Basic knowledge and skills about empirical research in social sciences, with a particular focus on quantitative research and relevant mathematical and/or statistical foundations"
+    level: "Beginner"
+
+  - title: "Introduction to Causal Inference"
+    description: "Introductory course to causal inference, including topics like potential outcomes model, directed acyclic graphs, basic research designs, and randomized control trials as the benchmark approach"
+    level: "Beginner/Intermediate"
+
+  - title: "Intermediate Causal Inference"
+    description: "Typical, well-established, non-RCT methods for causal inference, such as subclassification, matching methods, difference-in-differences, panel fixed effects, instrumental variables, etc."
+    level: "Intermediate"
+
+  - title: "Advanced Causal Inference"
+    description: "More advanced topics and recent developments in causal inference, including machine learning, meta-learners, tree-based approaches, etc."
+    level: "Advanced"
+
+social_links:
+  - platform: "GitHub"
+    url: "https://github.com/Feiran-Z"
+    icon: "github"
+
+  - platform: "Email"
+    url: "mailto:zephyr.v@outlook.com"
+    icon: "mail"

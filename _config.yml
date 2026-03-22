@@ -1,0 +1,101 @@
+# Jekyll Configuration for Multiplicity: Roads Not Taken
+
+# Site Settings
+title: "Multiplicity: Roads Not Taken"
+description: "An educational website on causal inference, exploring alternative paths - the 'what ifs' - as in Rubin's potential outcomes model."
+baseurl: "/Multiplicity" # the subpath of your site, e.g. /blog
+url: "https://Feiran-Z.github.io" # the base hostname & protocol for your site
+repository: "Feiran-Z/Multiplicity"
+
+# Author/owner information
+author:
+  name: "Feiran Zhang"
+  email: "zephyr.v@outlook.com"
+  twitter: "" # placeholder
+  github: "Feiran-Z"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Feiran Zhang"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .gitignore
+  - .git/
+  - .claude/
+  - Specifications/
+  - Agent-JDs.md
+  - CLAUDE.md
+  - LICENSE
+
+# Plugins (GitHub Pages supported)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# SEO Tag settings
+seo:
+  type: "Website"
+  locale: "en_US"
+  twitter:
+    username: "" # placeholder
+
+# SASS/SCSS settings
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Feed settings
+feed:
+  path: feed.xml
+
+# Custom variables
+brand_color: "#880112"
+secondary_color: "#A53A4A"
+accent_color: "#3A6B6B"
+background_color: "#F8FAFC"
+surface_color: "#FFFFFF"
+text_primary: "#1E293B"
+text_secondary: "#475569"
+
+# Navigation (will be loaded from _data/navigation.yml)
+navigation: true
+
+# MathJax support
+mathjax: true
+mathjax_config:
+  tex:
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    processEscapes: true
+  svg:
+    fontCache: 'global'

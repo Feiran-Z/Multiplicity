@@ -1,0 +1,27 @@
+<header class="site-header">
+  <div class="container">
+    <div class="header-content">
+      <a href="{{ site.baseurl }}/" class="site-logo">
+        <span class="logo-text">Multiplicity</span>
+        <span class="logo-subtitle">Roads Not Taken</span>
+      </a>
+
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="menu-icon"></span>
+      </button>
+
+      <nav class="site-nav">
+        <ul class="nav-list">
+          {% for item in site.data.navigation %}
+            <li class="nav-item">
+              <a href="{{ site.baseurl }}{{ item.link }}"
+                 class="nav-link {% if page.url == item.link %}active{% endif %}">
+                {{ item.name }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
