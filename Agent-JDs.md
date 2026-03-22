@@ -61,14 +61,14 @@ The following agent roles are designed to collaborate using Claude Code, leverag
 
 **Role Title:** UI Developer
 
-**Objective:** Implement the visual design, including color palette, typography, and all UI components (buttons, cards, forms, navigation, AI-specific elements) using HTML and Sass.
+**Objective:** Implement the visual design, including color palette, typography, and all UI components (buttons, cards, forms, navigation) using HTML and Sass.
 
 **Key Responsibilities:**
 - Create Sass partials for variables, mixins, base styles, and components.
 - Implement the color palette as CSS custom properties or Sass variables.
 - Style typography: headings, body text, small text using specified fonts.
 - Build reusable components:
-  - Buttons (primary, secondary, text, icon, AI action)
+  - Buttons (primary, secondary, text, icon)
   - Form elements (inputs, labels, validation states)
   - Cards (with hover effects)
   - Navigation (main menu, breadcrumbs, footer)
