@@ -89,7 +89,6 @@ All colors meet WCAG AA contrast ratios with text. Primary #880112 is a deep bur
 - **Loading States**: Skeleton screens for cards; progress bar for long operations.
 - **Micro‑interactions**: Button click ripple (primary color); toggle switches slide with accent background.
 - **Page Transitions**: Fade (`0.3s`) between main views.
-- **AI Response Animations**: Text appears word‑by‑word (fast, 30ms per word) to simulate thinking.
 
 ## 10. Accessibility
 - **Color Contrast**: All text/background combinations meet WCAG AA (minimum 4.5:1 for normal text). Primary button white on `#880112` contrast > 7:1.
@@ -116,7 +115,7 @@ All colors meet WCAG AA contrast ratios with text. Primary #880112 is a deep bur
 ## 13. Design Assets
 - **Design Tool**: [Link to Figma file]
 - **Asset Export**: Icons and logos in SVG format; raster images in WebP with fallback.
-- **Font Files**: Inter (Google Fonts), Playfair Display (Google Fonts). Self‑host as fallback.
+- **Font Files**: Inter (Google Fonts), Cinzel Decorative (Google Fonts). Self‑host as fallback.
 
 ## 14. Approval & Sign-off
 - **Stakeholders**: Project Lead, Research Lead, UX Designer, Developer Lead.
