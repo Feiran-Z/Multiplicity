@@ -12,9 +12,7 @@
 
   {% include footer.html %}
 
-  {% if page.mathjax or layout.mathjax or site.mathjax %}
-    {% include mathjax.html %}
-  {% endif %}
+  {% include mathjax.html %}
 
   {% if page.custom_js %}
     {% for js_file in page.custom_js %}

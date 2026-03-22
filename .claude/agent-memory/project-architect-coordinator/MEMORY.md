@@ -62,3 +62,11 @@
 - MathJax integration in layout templates
 - Responsive design breakpoints
 - Accessibility features throughout
+
+## MathJax Configuration Details
+- **Location**: Configured inline in `_layouts/default.html` (not in separate `mathjax.html` file)
+- **Inline math**: `$...$` or `\(...\)`
+- **Display math**: `$$...$$` or `\[...\]`
+- **Process escapes**: `true` for kramdown compatibility
+- **SVG rendering**: Global font cache
+- **Agent specification note**: `jekyll-setup-engineer.md` mentions `mathjax.html` but implementation uses inline config in default.html
