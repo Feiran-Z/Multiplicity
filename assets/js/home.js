@@ -129,7 +129,7 @@ function initScrollShrink(prefersReducedMotion) {
     if (!ticking) {
       window.requestAnimationFrame(() => {
         const scrollY = window.scrollY || window.pageYOffset;
-        const shrinkThreshold = 100; // pixels
+        const shrinkThreshold = 150; // pixels
 
         if (scrollY > shrinkThreshold && !isShrunk) {
           banner.classList.add('banner--shrunk');
