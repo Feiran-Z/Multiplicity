@@ -4,89 +4,308 @@ title: "About"
 description: "Learn about the Multiplicity: Roads Not Taken project and its mission to explore causal inference through education and research."
 ---
 
-## About Multiplicity: Roads Not Taken
+<div class="about-section">
+  <h2 class="about-section-title">About Multiplicity: Roads Not Taken</h2>
 
-**Multiplicity: Roads Not Taken** is an educational initiative dedicated to exploring the fundamental questions of causal inference. Our name draws inspiration from Robert Frost's poem, which captures the human curiosity about alternative paths—the "what ifs" that shape both personal journeys and scientific inquiry.
+  <div class="about-card">
+    <h3 class="about-card-title">Our Vision</h3>
+    <div class="about-card-content">
+      <p><strong>Multiplicity: Roads Not Taken</strong> is an educational initiative dedicated to exploring the fundamental questions of causal inference. Our name draws inspiration from Robert Frost's poem, which captures the human curiosity about alternative paths—the "what ifs" that shape both personal journeys and scientific inquiry.</p>
 
-### Our Mission
+      <div class="about-highlight">
+        <div class="about-highlight-title">The Core Question</div>
+        <div class="about-highlight-content">What would have happened if things had been different? This simple question lies at the heart of causal inference, scientific discovery, and human decision-making.</div>
+      </div>
+    </div>
+  </div>
+</div>
 
-We believe that understanding cause and effect is essential for making informed decisions in research, policy, and everyday life. Yet, causal questions are inherently about counterfactuals: outcomes that were not observed, paths that were not taken. Our mission is to:
+<div class="about-section">
+  <h2 class="about-section-title">Our Mission</h2>
 
-1. **Demystify causal inference** by providing clear, accessible educational resources
-2. **Bridge theory and practice** through concrete examples and implementation guidance
-3. **Foster a community** of learners, researchers, and practitioners interested in causal methods
-4. **Explore the philosophical dimensions** of counterfactual thinking and its implications
+  <div class="about-card">
+    <h3 class="about-card-title">Why Causal Inference Matters</h3>
+    <div class="about-card-content">
+      <p>We believe that understanding cause and effect is essential for making informed decisions in research, policy, and everyday life. Yet, causal questions are inherently about counterfactuals: outcomes that were not observed, paths that were not taken.</p>
 
-### The Rubin Causal Model
+      <div class="about-principles-grid">
+        <div class="about-principle-card">
+          <div class="about-principle-number">1</div>
+          <div class="about-principle-title">Demystify causal inference</div>
+          <div class="about-principle-description">Provide clear, accessible educational resources that make complex concepts understandable</div>
+        </div>
 
-At the heart of our approach is Donald Rubin's potential outcomes framework, which formalizes the idea that for each unit (person, school, country) and each treatment, there exists a set of potential outcomes—one for each possible treatment level. The fundamental problem of causal inference is that we observe only one of these potential outcomes for each unit.
+        <div class="about-principle-card">
+          <div class="about-principle-number">2</div>
+          <div class="about-principle-title">Bridge theory and practice</div>
+          <div class="about-principle-description">Offer concrete examples and implementation guidance with real code and data</div>
+        </div>
 
-This framework provides the mathematical language to ask: What would have happened if things had been different? It reminds us that every observed outcome is just one realization among many possible worlds.
+        <div class="about-principle-card">
+          <div class="about-principle-number">3</div>
+          <div class="about-principle-title">Foster a community</div>
+          <div class="about-principle-description">Connect learners, researchers, and practitioners interested in causal methods</div>
+        </div>
 
-### Educational Philosophy
+        <div class="about-principle-card">
+          <div class="about-principle-number">4</div>
+          <div class="about-principle-title">Explore philosophical dimensions</div>
+          <div class="about-principle-description">Examine the deeper implications of counterfactual thinking across disciplines</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-We take a layered approach to education:
+<div class="about-section">
+  <h2 class="about-section-title">The Rubin Causal Model</h2>
 
-- **Story First**: We begin with relatable narratives that illustrate why causal questions matter
-- **Theory Second**: We explain the mathematical and conceptual foundations clearly
-- **Practice Third**: We provide hands-on examples with real code and data
-- **Reflection Last**: We encourage critical thinking about assumptions, limitations, and ethical implications
+  <div class="about-card">
+    <h3 class="about-card-title">Potential Outcomes Framework</h3>
+    <div class="about-card-content">
+      <p>At the heart of our approach is Donald Rubin's potential outcomes framework, which formalizes the idea that for each unit (person, school, country) and each treatment, there exists a set of potential outcomes—one for each possible treatment level.</p>
 
-This approach mirrors the scientific process itself: observation, hypothesis, testing, and interpretation.
+      <div class="about-highlight">
+        <div class="about-highlight-title">The Fundamental Problem of Causal Inference</div>
+        <div class="about-highlight-content">We observe only one of these potential outcomes for each unit. The counterfactual—what would have happened under alternative conditions—remains unobserved but is essential for causal reasoning.</div>
+      </div>
 
-### Project Origins
+      <p>This framework provides the mathematical language to ask: <em>What would have happened if things had been different?</em> It reminds us that every observed outcome is just one realization among many possible worlds.</p>
+    </div>
+  </div>
+</div>
 
-This project emerged from a personal academic journey. After six years in a Ph.D. program in international and development economics, I faced a fork in the road: continue on the expected academic path or explore alternative directions. Choosing the latter sparked a deep reflection on counterfactuals—not just in research, but in life.
+<div class="about-section">
+  <h2 class="about-section-title">Educational Philosophy</h2>
 
-That experience crystallized into a commitment to help others navigate their own causal questions, whether in formal research settings or in understanding the world around them.
+  <div class="about-card">
+    <h3 class="about-card-title">A Layered Approach to Learning</h3>
+    <div class="about-card-content">
+      <p>We believe that effective education requires multiple entry points and reinforcement at different levels of abstraction. Our approach mirrors the scientific process itself: observation, hypothesis, testing, and interpretation.</p>
 
-### Content Approach
+      <div class="about-grid">
+        <div class="about-principle-card">
+          <div class="about-principle-number">1</div>
+          <div class="about-principle-title">Story First</div>
+          <div class="about-principle-description">Begin with relatable narratives that illustrate why causal questions matter in real-world contexts</div>
+        </div>
 
-All our content follows these principles:
+        <div class="about-principle-card">
+          <div class="about-principle-number">2</div>
+          <div class="about-principle-title">Theory Second</div>
+          <div class="about-principle-description">Explain the mathematical and conceptual foundations clearly without unnecessary jargon</div>
+        </div>
 
-1. **Accessibility**: Complex ideas explained in plain language
-2. **Rigor**: Mathematically sound without unnecessary jargon
-3. **Practicality**: Real-world examples with implementable code
-4. **Transparency**: Clear discussion of assumptions and limitations
-5. **Interdisciplinary**: Drawing from economics, epidemiology, computer science, and philosophy
+        <div class="about-principle-card">
+          <div class="about-principle-number">3</div>
+          <div class="about-principle-title">Practice Third</div>
+          <div class="about-principle-description">Provide hands-on examples with real code and data for immediate application</div>
+        </div>
 
-### The Team
+        <div class="about-principle-card">
+          <div class="about-principle-number">4</div>
+          <div class="about-principle-title">Reflection Last</div>
+          <div class="about-principle-description">Encourage critical thinking about assumptions, limitations, and ethical implications</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-**Feiran Zhang** (Project Founder & Lead)
-- Former Ph.D. candidate in International and Development Economics
-- Research interests: causal inference, program evaluation, development economics
-- Contact: [zephyr.v@outlook.com](mailto:zephyr.v@outlook.com)
+<div class="about-section">
+  <h2 class="about-section-title">Project Origins</h2>
 
-We are currently a solo project but welcome collaborations from educators, researchers, and developers interested in causal inference education.
+  <div class="about-card">
+    <h3 class="about-card-title">A Personal Fork in the Road</h3>
+    <div class="about-card-content">
+      <p>This project emerged from a personal academic journey. After six years in a Ph.D. program in international and development economics, I faced a fork in the road: continue on the expected academic path or explore alternative directions.</p>
 
-### Acknowledgments
+      <div class="about-highlight">
+        <div class="about-highlight-title">The Turning Point</div>
+        <div class="about-highlight-content">Choosing the latter sparked a deep reflection on counterfactuals—not just in research, but in life. What paths were available? What factors influenced the decision? What might have been different?</div>
+      </div>
 
-We gratefully acknowledge:
-- The foundational work of Donald Rubin, James Robins, Judea Pearl, and others who developed the modern framework for causal inference
-- The open-source community that makes tools like R, Python, and Jekyll available to all
-- The educators and researchers who have shared their knowledge freely, inspiring this project
-- The poem "The Road Not Taken" by Robert Frost, which continues to resonate with anyone who has wondered about alternative paths
+      <p>That experience crystallized into a commitment to help others navigate their own causal questions, whether in formal research settings or in understanding the world around them.</p>
+    </div>
+  </div>
+</div>
 
-### Get Involved
+<div class="about-section">
+  <h2 class="about-section-title">Content Approach</h2>
 
-This project is built for and by the community. You can contribute by:
+  <div class="about-card">
+    <h3 class="about-card-title">Our Guiding Principles</h3>
+    <div class="about-card-content">
+      <p>All our content is crafted with careful attention to both substance and presentation. We believe that educational materials should be as rigorous as they are accessible.</p>
 
-1. **Learning**: Take our courses and explore the resources
-2. **Sharing**: Recommend content to colleagues and students
-3. **Contributing**: Submit corrections, suggestions, or new content
-4. **Connecting**: Join discussions on causal inference topics
+      <div class="about-principles-grid">
+        <div class="about-principle-card">
+          <div class="about-principle-number">A</div>
+          <div class="about-principle-title">Accessibility</div>
+          <div class="about-principle-description">Complex ideas explained in plain language without sacrificing precision</div>
+        </div>
 
-### License
+        <div class="about-principle-card">
+          <div class="about-principle-number">R</div>
+          <div class="about-principle-title">Rigor</div>
+          <div class="about-principle-description">Mathematically sound foundations presented without unnecessary jargon</div>
+        </div>
 
-All educational content on this site is licensed under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+        <div class="about-principle-card">
+          <div class="about-principle-number">P</div>
+          <div class="about-principle-title">Practicality</div>
+          <div class="about-principle-description">Real-world examples with implementable code in R and Python</div>
+        </div>
 
-Code examples are provided under the [MIT License](https://opensource.org/licenses/MIT).
+        <div class="about-principle-card">
+          <div class="about-principle-number">T</div>
+          <div class="about-principle-title">Transparency</div>
+          <div class="about-principle-description">Clear discussion of assumptions, limitations, and methodological choices</div>
+        </div>
 
-### Contact
+        <div class="about-principle-card">
+          <div class="about-principle-number">I</div>
+          <div class="about-principle-title">Interdisciplinary</div>
+          <div class="about-principle-description">Drawing insights from economics, epidemiology, computer science, and philosophy</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-For questions, suggestions, or collaboration inquiries, please use our [contact form](/contact/) or email [zephyr.v@outlook.com](mailto:zephyr.v@outlook.com).
+<div class="about-section">
+  <h2 class="about-section-title">The Team</h2>
 
----
+  <div class="about-grid">
+    <div class="about-team-card">
+      <div class="about-team-name">Feiran Zhang</div>
+      <div class="about-team-role">Project Founder & Lead</div>
+      <div class="about-team-bio">
+        <p>Former Ph.D. candidate in International and Development Economics with six years of graduate training in econometrics and causal inference methods.</p>
+        <p>Research interests include causal inference, program evaluation, development economics, and the intersection of statistical methods with real-world policy questions.</p>
+      </div>
+      <div class="about-team-contact">
+        Contact: <a href="mailto:zephyr.v@outlook.com">zephyr.v@outlook.com</a>
+      </div>
+    </div>
+  </div>
 
-*"Two roads diverged in a wood, and I—I took the one less traveled by, and that has made all the difference."*
-— Robert Frost
+  <div class="about-highlight">
+    <div class="about-highlight-title">Collaboration Welcome</div>
+    <div class="about-highlight-content">We are currently a solo project but actively welcome collaborations from educators, researchers, and developers interested in causal inference education. If you have ideas for content, teaching materials, or research applications, please reach out!</div>
+  </div>
+</div>
+
+<div class="about-section">
+  <h2 class="about-section-title">Acknowledgments</h2>
+
+  <div class="about-card">
+    <h3 class="about-card-title">Gratitude & Inspiration</h3>
+    <div class="about-card-content">
+      <p>This project stands on the shoulders of giants and benefits from countless contributions from the academic and open-source communities.</p>
+
+      <div class="about-highlight">
+        <div class="about-highlight-title">Intellectual Foundations</div>
+        <div class="about-highlight-content">We gratefully acknowledge the foundational work of Donald Rubin, James Robins, Judea Pearl, and others who developed the modern framework for causal inference that makes this educational mission possible.</div>
+      </div>
+
+      <div class="about-highlight">
+        <div class="about-highlight-title">Open Source Community</div>
+        <div class="about-highlight-content">This project relies on tools like R, Python, Jekyll, and countless libraries maintained by volunteers worldwide. We are deeply grateful for their contributions.</div>
+      </div>
+
+      <div class="about-highlight">
+        <div class="about-highlight-title">Educators & Researchers</div>
+        <div class="about-highlight-content">To the educators and researchers who have shared their knowledge freely through lectures, textbooks, blog posts, and open courses—your generosity inspires this project.</div>
+      </div>
+
+      <div class="about-highlight">
+        <div class="about-highlight-title">Literary Inspiration</div>
+        <div class="about-highlight-content">The poem "The Road Not Taken" by Robert Frost continues to resonate with anyone who has wondered about alternative paths, reminding us that our choices shape both personal journeys and scientific inquiry.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="about-section">
+  <h2 class="about-section-title">Get Involved</h2>
+
+  <div class="about-card">
+    <h3 class="about-card-title">Join Our Community</h3>
+    <div class="about-card-content">
+      <p>This project is built for and by the community. We believe that education thrives through collaboration, feedback, and shared exploration.</p>
+
+      <div class="about-grid">
+        <div class="about-principle-card">
+          <div class="about-principle-number">📚</div>
+          <div class="about-principle-title">Learn</div>
+          <div class="about-principle-description">Take our courses, explore the resources, and deepen your understanding of causal inference</div>
+        </div>
+
+        <div class="about-principle-card">
+          <div class="about-principle-number">📢</div>
+          <div class="about-principle-title">Share</div>
+          <div class="about-principle-description">Recommend content to colleagues, students, or anyone interested in causal methods</div>
+        </div>
+
+        <div class="about-principle-card">
+          <div class="about-principle-number">✏️</div>
+          <div class="about-principle-title">Contribute</div>
+          <div class="about-principle-description">Submit corrections, suggestions, or propose new content through our contact form</div>
+        </div>
+
+        <div class="about-principle-card">
+          <div class="about-principle-number">💬</div>
+          <div class="about-principle-title">Connect</div>
+          <div class="about-principle-description">Join discussions on causal inference topics and share your perspectives</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="about-section">
+  <h2 class="about-section-title">License & Usage</h2>
+
+  <div class="about-card">
+    <h3 class="about-card-title">Open Educational Resources</h3>
+    <div class="about-card-content">
+      <p>We believe in making educational materials as accessible as possible while protecting certain usage rights.</p>
+
+      <div class="about-highlight">
+        <div class="about-highlight-title">Educational Content License</div>
+        <div class="about-highlight-content">All educational content on this site is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>. This allows sharing and adaptation for non-commercial purposes with proper attribution.</div>
+      </div>
+
+      <div class="about-highlight">
+        <div class="about-highlight-title">Code License</div>
+        <div class="about-highlight-content">Code examples are provided under the <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a>, offering maximum flexibility for reuse in both open-source and commercial projects.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="about-section">
+  <h2 class="about-section-title">Contact</h2>
+
+  <div class="about-card">
+    <h3 class="about-card-title">Get in Touch</h3>
+    <div class="about-card-content">
+      <p>We welcome questions, suggestions, collaboration inquiries, and feedback from the community.</p>
+
+      <div class="about-highlight">
+        <div class="about-highlight-title">Preferred Contact Methods</div>
+        <div class="about-highlight-content">
+          <p><strong>Contact Form:</strong> Use our <a href="/contact/">contact form</a> for general inquiries, content suggestions, or technical issues.</p>
+          <p><strong>Email:</strong> For direct communication, email <a href="mailto:zephyr.v@outlook.com">zephyr.v@outlook.com</a>.</p>
+          <p><strong>Response Time:</strong> We aim to respond to all inquiries within 3-5 business days.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="about-quote">
+  "Two roads diverged in a wood, and I—I took the one less traveled by, and that has made all the difference."
+  <div class="about-quote-author">— Robert Frost</div>
+</div>
