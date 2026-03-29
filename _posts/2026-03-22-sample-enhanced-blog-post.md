@@ -1,5 +1,6 @@
 ---
 layout: post
+layout_style: 'sophisticated'
 title: "Sample Enhanced Blog Post with Improved Styling"
 date: 2026-03-22
 author: "Feiran Zhang"

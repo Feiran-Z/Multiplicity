@@ -1,5 +1,6 @@
 ---
 layout: home
+layout_style: 'sophisticated'
 title: "Multiplicity: Roads Not Taken"
 description: "An educational website on causal inference, exploring alternative paths - the 'what ifs' - as in Rubin's potential outcomes model."
 ---
@@ -30,6 +31,8 @@ description: "An educational website on causal inference, exploring alternative 
   </div>
 </div>
 
+<div class="content-blocks">
+<div class="content-block content-block-hero">
 <main class="container">
   <!-- Robert Frost Poem Section -->
   <section class="poem-section">
@@ -133,6 +136,8 @@ description: "An educational website on causal inference, exploring alternative 
     </div>
   </section>
 </main>
+</div>
+</div>
 
 <script src="{{ site.baseurl }}/assets/js/home.js" defer></script>
 

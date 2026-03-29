@@ -1,38 +1,43 @@
 ---
 layout: page
+layout_style: 'sophisticated'
 title: "Courses"
 description: "Four levels of causal inference education, from empirical research fundamentals to advanced topics in modern causal inference."
 ---
 
-## Causal Inference Education Pathways
+<div class="content-block">
+  <h2>Causal Inference Education Pathways</h2>
 
-Our curriculum is designed to take you from foundational concepts to cutting-edge methods in causal inference. Each course builds on the previous one, but you can also jump in at the level that matches your background.
+  <p>Our curriculum is designed to take you from foundational concepts to cutting-edge methods in causal inference. Each course builds on the previous one, but you can also jump in at the level that matches your background.</p>
 
-<div class="course-grid">
-  {% for course in site.data.site.courses %}
-    <div class="course-card" id="{{ course.title | slugify }}">
-      <div class="course-card-header">
-        <h3 class="course-card-title">{{ course.title }}</h3>
-        <span class="course-card-level">{{ course.level }}</span>
+  <div class="content-grid">
+    {% for course in site.data.site.courses %}
+      <div class="content-grid-card" id="{{ course.title | slugify }}">
+        <div class="content-grid-card-header">
+          <h3>{{ course.title }}</h3>
+          <span class="content-grid-card-level">{{ course.level }}</span>
+        </div>
+        <div class="content-grid-card-body">
+          <p>{{ course.description }}</p>
+        </div>
+        <div class="content-grid-card-footer">
+          <a href="#course-{{ forloop.index }}" class="button button-text">
+            View details ↓
+          </a>
+        </div>
       </div>
-      <div class="course-card-body">
-        <p class="course-card-description">{{ course.description }}</p>
-      </div>
-      <div class="course-card-footer">
-        <a href="#course-{{ forloop.index }}" class="button button-text">
-          View details ↓
-        </a>
-      </div>
-    </div>
-  {% endfor %}
+    {% endfor %}
+  </div>
 </div>
 
----
+</div>
 
-## Course Details
+<div class="content-block">
+  <h2>Course Details</h2>
 
-### <span id="course-1">1. Empirical Research Fundamentals</span>
-*Beginner level • Prerequisites: Basic statistics*
+  <div class="content-card">
+    <h3 id="course-1">1. Empirical Research Fundamentals</h3>
+    <p class="content-card-subtitle">Beginner level • Prerequisites: Basic statistics</p>
 
 This course establishes the foundation for all empirical research in social sciences, with particular focus on quantitative methods.
 
@@ -63,10 +68,11 @@ This course establishes the foundation for all empirical research in social scie
 - Software: R or Python (your choice)
 - Datasets: Real-world social science data
 
----
+</div>
 
-### <span id="course-2">2. Introduction to Causal Inference</span>
-*Beginner/Intermediate level • Prerequisites: Empirical Research Fundamentals or equivalent*
+<div class="content-card">
+  <h3 id="course-2">2. Introduction to Causal Inference</h3>
+  <p class="content-card-subtitle">Beginner/Intermediate level • Prerequisites: Empirical Research Fundamentals or equivalent</p>
 
 This course introduces the core framework for thinking causally, starting with the potential outcomes model and building up to randomized experiments as the gold standard.
 
@@ -98,10 +104,11 @@ This course introduces the core framework for thinking causally, starting with t
 - Software: R with `causalverse` package
 - Datasets: Experimental data from economics, medicine, education
 
----
+</div>
 
-### <span id="course-3">3. Intermediate Causal Inference</span>
-*Intermediate level • Prerequisites: Introduction to Causal Inference*
+<div class="content-card">
+  <h3 id="course-3">3. Intermediate Causal Inference</h3>
+  <p class="content-card-subtitle">Intermediate level • Prerequisites: Introduction to Causal Inference</p>
 
 This course covers established methods for estimating causal effects when randomization is not possible, focusing on observational study designs.
 
@@ -134,10 +141,11 @@ This course covers established methods for estimating causal effects when random
 - Software: R with `MatchIt`, `fixest`, `ivpack` packages
 - Datasets: Observational data from economics, public health, policy evaluation
 
----
+</div>
 
-### <span id="course-4">4. Advanced Causal Inference</span>
-*Advanced level • Prerequisites: Intermediate Causal Inference*
+<div class="content-card">
+  <h3 id="course-4">4. Advanced Causal Inference</h3>
+  <p class="content-card-subtitle">Advanced level • Prerequisites: Intermediate Causal Inference</p>
 
 This course explores frontier topics and modern approaches, including machine learning methods for causal inference and recent methodological developments.
 
@@ -171,12 +179,14 @@ This course explores frontier topics and modern approaches, including machine le
 - Software: R with `grf`, `DoubleML`, `bnlearn` packages
 - Research papers from top econometrics, statistics, and ML journals
 
----
+</div>
 
-## Enrollment and Access
+<div class="content-block">
+  <h2>Enrollment and Access</h2>
 
-### Current Status
-All courses are **under development** and will be released in phases:
+  <div class="content-card">
+    <h3>Current Status</h3>
+    <p>All courses are <strong>under development</strong> and will be released in phases:</p>
 
 1. **Phase 1 (Q3 2024)**: Introduction to Causal Inference
 2. **Phase 2 (Q4 2024)**: Empirical Research Fundamentals
@@ -201,41 +211,60 @@ We are committed to making causal inference education accessible. Limited schola
 ### Certification
 Complete all four courses to earn a **Certificate in Causal Inference Methods**. Each course also offers individual completion certificates.
 
----
+</div>
 
-## Frequently Asked Questions
+<div class="content-block">
+  <h2>Frequently Asked Questions</h2>
 
-**Q: Do I need to take the courses in order?**
-A: While designed as a sequence, each course stands alone. We recommend starting with "Introduction to Causal Inference" unless you have strong statistics background.
+  <div class="content-faq">
+    <div class="content-faq-item">
+      <h4>Q: Do I need to take the courses in order?</h4>
+      <p>A: While designed as a sequence, each course stands alone. We recommend starting with "Introduction to Causal Inference" unless you have strong statistics background.</p>
+    </div>
 
-**Q: What software will I need?**
-A: All courses use R, with optional Python equivalents provided. We'll help you get set up regardless of your current skill level.
+    <div class="content-faq-item">
+      <h4>Q: What software will I need?</h4>
+      <p>A: All courses use R, with optional Python equivalents provided. We'll help you get set up regardless of your current skill level.</p>
+    </div>
 
-**Q: Are there prerequisites?**
-A: Yes, each course lists prerequisites. The first course requires only basic statistics knowledge.
+    <div class="content-faq-item">
+      <h4>Q: Are there prerequisites?</h4>
+      <p>A: Yes, each course lists prerequisites. The first course requires only basic statistics knowledge.</p>
+    </div>
 
-**Q: How much time should I budget?**
-A: See the "Format" section for each course. Most require 6-15 hours per week depending on the level.
+    <div class="content-faq-item">
+      <h4>Q: How much time should I budget?</h4>
+      <p>A: See the "Format" section for each course. Most require 6-15 hours per week depending on the level.</p>
+    </div>
 
-**Q: Will there be interaction with instructors?**
-A: In live cohort formats, yes. Self-paced courses include discussion forums and optional office hours.
+    <div class="content-faq-item">
+      <h4>Q: Will there be interaction with instructors?</h4>
+      <p>A: In live cohort formats, yes. Self-paced courses include discussion forums and optional office hours.</p>
+    </div>
 
-**Q: Can I use these courses for academic credit?**
-A: We're working on partnerships with universities for credit transfer. Currently, courses provide certificates of completion.
+    <div class="content-faq-item">
+      <h4>Q: Can I use these courses for academic credit?</h4>
+      <p>A: We're working on partnerships with universities for credit transfer. Currently, courses provide certificates of completion.</p>
+    </div>
+  </div>
+</div>
 
----
+<div class="content-block">
+  <h2>Stay Updated</h2>
 
-## Stay Updated
+  <div class="content-card">
+    <p>Sign up for our newsletter to receive:</p>
+    <ul>
+      <li>Course launch announcements</li>
+      <li>Free preview materials</li>
+      <li>Scholarship opportunities</li>
+      <li>Research updates in causal inference</li>
+    </ul>
+    <p><a href="#" class="button button-primary">Subscribe to updates</a> (coming soon)</p>
+  </div>
+</div>
 
-Sign up for our newsletter to receive:
-- Course launch announcements
-- Free preview materials
-- Scholarship opportunities
-- Research updates in causal inference
-
-[Subscribe to updates](#) (coming soon)
-
----
-
-*"The aim of science is not to open the door to infinite wisdom, but to set a limit to infinite error."*
-— Bertolt Brecht
+<div class="content-quote">
+  "The aim of science is not to open the door to infinite wisdom, but to set a limit to infinite error."
+  <div class="content-quote-author">— Bertolt Brecht</div>
+</div>

@@ -1,105 +1,144 @@
 ---
 layout: page
+layout_style: 'sophisticated'
 title: "Instrumental Variables: Using Nature's Randomization"
 subtitle: "How to estimate causal effects when treatment is not randomly assigned"
 mathjax: true
 ---
 
-## A Story: The Effect of Classroom Size on Learning
+<div class="content-block">
+  <h2>A Story: The Effect of Classroom Size on Learning</h2>
 
-Imagine you're an education researcher trying to determine whether smaller class sizes improve student test scores. You collect data from hundreds of schools and notice a pattern: schools with smaller classes tend to have higher test scores. But is this a causal relationship?
+  <p>Imagine you're an education researcher trying to determine whether smaller class sizes improve student test scores. You collect data from hundreds of schools and notice a pattern: schools with smaller classes tend to have higher test scores. But is this a causal relationship?</p>
 
-The problem is confounding. Schools with smaller classes often have other advantages: more funding, better teachers, wealthier neighborhoods, more involved parents. If you simply compare test scores between large and small classes, you're comparing apples to oranges. The observed correlation might reflect these other factors rather than a true causal effect of class size.
+  <p>The problem is confounding. Schools with smaller classes often have other advantages: more funding, better teachers, wealthier neighborhoods, more involved parents. If you simply compare test scores between large and small classes, you're comparing apples to oranges. The observed correlation might reflect these other factors rather than a true causal effect of class size.</p>
 
-What you need is random variation in class size—something that affects class size but doesn't directly affect test scores except through class size. In the late 1990s, researchers found such a natural experiment in Tennessee. The state implemented Project STAR (Student/Teacher Achievement Ratio), which randomly assigned students and teachers to small (13-17 students) or regular (22-25 students) classes in kindergarten through third grade. This randomization created the ideal setting for causal inference.
+  <p>What you need is random variation in class size—something that affects class size but doesn't directly affect test scores except through class size. In the late 1990s, researchers found such a natural experiment in Tennessee. The state implemented Project STAR (Student/Teacher Achievement Ratio), which randomly assigned students and teachers to small (13-17 students) or regular (22-25 students) classes in kindergarten through third grade. This randomization created the ideal setting for causal inference.</p>
 
-But what if such a randomized experiment isn't available? Enter instrumental variables: a method that leverages "natural experiments" or "quasi-random" variation to estimate causal effects.
+  <p>But what if such a randomized experiment isn't available? Enter instrumental variables: a method that leverages "natural experiments" or "quasi-random" variation to estimate causal effects.</p>
+</div>
 
-## Technical Explanation
+<div class="content-block">
+  <h2>Technical Explanation</h2>
 
-Instrumental variables (IV) is a method for estimating causal effects when treatment assignment is not random but there exists an instrument—a variable that affects treatment but has no direct effect on the outcome except through treatment.
+  <p>Instrumental variables (IV) is a method for estimating causal effects when treatment assignment is not random but there exists an instrument—a variable that affects treatment but has no direct effect on the outcome except through treatment.</p>
 
-### The Setup
+  <div class="content-card">
+    <h3>The Setup</h3>
+    <p>We have:</p>
+    <ul>
+      <li><strong>Outcome</strong> $Y$ (e.g., test scores)</li>
+      <li><strong>Treatment</strong> $X$ (e.g., class size, binary or continuous)</li>
+      <li><strong>Instrument</strong> $Z$ (e.g., policy-induced variation in class size)</li>
+      <li><strong>Confounders</strong> $U$ (unobserved factors affecting both $X$ and $Y$)</li>
+    </ul>
 
-We have:
-- **Outcome** $Y$ (e.g., test scores)
-- **Treatment** $X$ (e.g., class size, binary or continuous)
-- **Instrument** $Z$ (e.g., policy-induced variation in class size)
-- **Confounders** $U$ (unobserved factors affecting both $X$ and $Y$)
+    <p>The causal relationships can be represented as:</p>
 
-The causal relationships can be represented as:
+    <div class="content-math">
+      $$
+      Z \rightarrow X \leftarrow U \rightarrow Y
+      $$
 
-$$
-Z \rightarrow X \leftarrow U \rightarrow Y
-$$
+      $$
+      X \rightarrow Y
+      $$
+    </div>
 
-$$
-X \rightarrow Y
-$$
+    <p>Notice: there's no direct arrow from $Z$ to $Y$. The instrument affects the outcome only through its effect on treatment.</p>
+  </div>
 
-Notice: there's no direct arrow from $Z$ to $Y$. The instrument affects the outcome only through its effect on treatment.
+  <div class="content-card">
+    <h3>Key Assumptions</h3>
+    <ol>
+      <li><strong>Relevance</strong>: $Z$ is correlated with $X$
+        <ul>
+          <li>Formal: $Cov(Z, X) \neq 0$</li>
+          <li>Testable: First-stage regression of $X$ on $Z$</li>
+        </ul>
+      </li>
+      <li><strong>Exclusion</strong>: $Z$ affects $Y$ only through $X$
+        <ul>
+          <li>Formal: $Z \perp Y \mid X, U$</li>
+          <li>Not directly testable—requires subject-matter knowledge</li>
+        </ul>
+      </li>
+      <li><strong>Exchangeability</strong>: $Z$ is independent of confounders
+        <ul>
+          <li>Formal: $Z \perp U$</li>
+          <li>Often implied by random assignment or natural experiment</li>
+        </ul>
+      </li>
+      <li><strong>Monotonicity</strong> (for binary treatment): No "defiers"—no units that would take treatment if not encouraged and not take treatment if encouraged
+        <ul>
+          <li>Required for local average treatment effect (LATE) interpretation</li>
+        </ul>
+      </li>
+    </ol>
+  </div>
 
-### Key Assumptions
+  <div class="content-card">
+    <h3>Estimation</h3>
+    <p>For a continuous instrument and treatment, the simplest IV estimator is:</p>
 
-1. **Relevance**: $Z$ is correlated with $X$
-   - Formal: $Cov(Z, X) \neq 0$
-   - Testable: First-stage regression of $X$ on $Z$
+    <div class="content-math">
+      $$
+      \beta_{IV} = \frac{Cov(Z, Y)}{Cov(Z, X)}
+      $$
+    </div>
 
-2. **Exclusion**: $Z$ affects $Y$ only through $X$
-   - Formal: $Z \perp Y \mid X, U$
-   - Not directly testable—requires subject-matter knowledge
+    <p>This is the ratio of the reduced form (effect of $Z$ on $Y$) to the first stage (effect of $Z$ on $X$).</p>
 
-3. **Exchangeability**: $Z$ is independent of confounders
-   - Formal: $Z \perp U$
-   - Often implied by random assignment or natural experiment
+    <p>In practice, we often use two-stage least squares (2SLS):</p>
 
-4. **Monotonicity** (for binary treatment): No "defiers"—no units that would take treatment if not encouraged and not take treatment if encouraged
-   - Required for local average treatment effect (LATE) interpretation
+    <p><strong>Stage 1</strong>: Regress $X$ on $Z$ (and covariates if available):</p>
+    <div class="content-math">
+      $$
+      \hat{X} = \hat{\pi}_0 + \hat{\pi}_1 Z
+      $$
+    </div>
 
-### Estimation
+    <p><strong>Stage 2</strong>: Regress $Y$ on $\hat{X}$ (and same covariates):</p>
+    <div class="content-math">
+      $$
+      Y = \beta_0 + \beta_{IV} \hat{X} + \epsilon
+      $$
+    </div>
 
-For a continuous instrument and treatment, the simplest IV estimator is:
+    <p>The estimate $\hat{\beta}_{IV}$ is the IV estimate of the causal effect.</p>
+  </div>
 
-$$
-\beta_{IV} = \frac{Cov(Z, Y)}{Cov(Z, X)}
-$$
+  <div class="content-card">
+    <h3>Interpretation</h3>
+    <ul>
+      <li><strong>With binary treatment and instrument</strong>: $\beta_{IV}$ estimates the local average treatment effect (LATE)—the effect for "compliers" who change treatment status due to the instrument</li>
+      <li><strong>With continuous treatment</strong>: $\beta_{IV}$ estimates a weighted average of marginal effects</li>
+    </ul>
+  </div>
 
-This is the ratio of the reduced form (effect of $Z$ on $Y$) to the first stage (effect of $Z$ on $X$).
+  <div class="content-card">
+    <h3>Limitations</h3>
+    <ol>
+      <li><strong>Weak instruments</strong>: When $Z$ is only weakly correlated with $X$, IV estimates can be biased and have poor statistical properties</li>
+      <li><strong>Exclusion violation</strong>: If $Z$ affects $Y$ through channels other than $X$, estimates are biased</li>
+      <li><strong>Heterogeneous effects</strong>: IV estimates a particular weighted average of effects, which may not equal the average treatment effect</li>
+      <li><strong>External validity</strong>: LATE applies only to compliers, who may differ from the overall population</li>
+    </ol>
+  </div>
+</div>
 
-In practice, we often use two-stage least squares (2SLS):
+<div class="content-block">
+  <h2>Implementation in R</h2>
 
-**Stage 1**: Regress $X$ on $Z$ (and covariates if available):
-$$
-\hat{X} = \hat{\pi}_0 + \hat{\pi}_1 Z
-$$
+  <p>Let's simulate data to illustrate IV estimation. We'll create a scenario where:</p>
+  <ul>
+    <li>$Z$ is a binary instrument (e.g., lottery for small classes)</li>
+    <li>$X$ is treatment uptake (actually attending small class)</li>
+    <li>$Y$ is test scores</li>
+    <li>$U$ is unobserved student ability (confounder)</li>
+  </ul>
 
-**Stage 2**: Regress $Y$ on $\hat{X}$ (and same covariates):
-$$
-Y = \beta_0 + \beta_{IV} \hat{X} + \epsilon
-$$
-
-The estimate $\hat{\beta}_{IV}$ is the IV estimate of the causal effect.
-
-### Interpretation
-
-- **With binary treatment and instrument**: $\beta_{IV}$ estimates the local average treatment effect (LATE)—the effect for "compliers" who change treatment status due to the instrument
-- **With continuous treatment**: $\beta_{IV}$ estimates a weighted average of marginal effects
-
-### Limitations
-
-1. **Weak instruments**: When $Z$ is only weakly correlated with $X$, IV estimates can be biased and have poor statistical properties
-2. **Exclusion violation**: If $Z$ affects $Y$ through channels other than $X$, estimates are biased
-3. **Heterogeneous effects**: IV estimates a particular weighted average of effects, which may not equal the average treatment effect
-4. **External validity**: LATE applies only to compliers, who may differ from the overall population
-
-## Implementation in R
-
-Let's simulate data to illustrate IV estimation. We'll create a scenario where:
-- $Z$ is a binary instrument (e.g., lottery for small classes)
-- $X$ is treatment uptake (actually attending small class)
-- $Y$ is test scores
-- $U$ is unobserved student ability (confounder)
-
+<div class="content-code">
 ```r
 # Load required packages
 library(ivpack)
@@ -177,6 +216,7 @@ ggplot(plot_data, aes(x = factor(X), y = mean_Y, fill = factor(Z))) +
   theme_minimal() +
   scale_fill_manual(values = c("#3A6B6B", "#880112"))
 ```
+</div>
 
 ### Interpretation of Output
 

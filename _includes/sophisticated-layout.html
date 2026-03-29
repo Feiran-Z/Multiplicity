@@ -1,0 +1,145 @@
+<article class="sophisticated-layout" data-layout="sophisticated">
+  <div class="container">
+    <div class="layout-grid">
+      <!-- Main content area -->
+      <main class="main-content">
+        <header class="content-header">
+          <h1 class="content-title">{{ page.title }}</h1>
+          {% if page.subtitle %}
+            <p class="content-subtitle">{{ page.subtitle }}</p>
+          {% endif %}
+          {% if page.date %}
+            <div class="content-meta">
+              <time datetime="{{ page.date | date_to_xmlschema }}" class="content-date">
+                {{ page.date | date: "%B %-d, %Y" }}
+              </time>
+              {% if page.author %}
+                <span class="content-author-separator">•</span>
+                <span class="content-author">{{ page.author }}</span>
+              {% endif %}
+            </div>
+          {% endif %}
+          {% if page.tags.size > 0 %}
+            <div class="content-tags">
+              {% for tag in page.tags %}
+                <a href="{{ site.baseurl }}/blog/tags/#{{ tag | slugify }}" class="tag">{{ tag }}</a>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </header>
+
+        <div class="content-sections">
+          <!-- Table of Contents (auto-generated from headings) -->
+          {% if page.toc != false %}
+            <aside class="content-toc">
+              <div class="toc-header">
+                <h3 class="toc-title">Contents</h3>
+                <button class="toc-toggle" aria-label="Toggle table of contents" aria-expanded="true">
+                  <span class="toc-toggle-icon"></span>
+                </button>
+              </div>
+              <nav class="toc-nav" aria-label="Table of contents">
+                {% include toc.html html=content %}
+              </nav>
+            </aside>
+          {% endif %}
+
+          <!-- Main content blocks -->
+          <div class="content-blocks">
+            {{ content }}
+          </div>
+        </div>
+
+        <!-- Content footer with navigation -->
+        <footer class="content-footer">
+          {% if page.previous.url or page.next.url %}
+            <nav class="content-navigation">
+              {% if page.previous.url %}
+                <a href="{{ page.previous.url | relative_url }}" class="content-nav-prev">
+                  <span class="content-nav-direction">← Previous</span>
+                  <span class="content-nav-title">{{ page.previous.title | truncate: 60 }}</span>
+                </a>
+              {% endif %}
+              {% if page.next.url %}
+                <a href="{{ page.next.url | relative_url }}" class="content-nav-next">
+                  <span class="content-nav-direction">Next →</span>
+                  <span class="content-nav-title">{{ page.next.title | truncate: 60 }}</span>
+                </a>
+              {% endif %}
+            </nav>
+          {% endif %}
+        </footer>
+      </main>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <!-- Quick navigation -->
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">Quick Navigation</h3>
+          <nav class="sidebar-nav" aria-label="Quick navigation">
+            <ul class="sidebar-nav-list">
+              {% for item in site.data.navigation %}
+                <li class="sidebar-nav-item">
+                  <a href="{{ site.baseurl }}{{ item.link }}"
+                     class="sidebar-nav-link {% if page.url == item.link %}active{% endif %}">
+                    {{ item.name }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Recent posts -->
+        {% if site.posts.size > 0 %}
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">Recent Posts</h3>
+            <ul class="sidebar-posts">
+              {% for post in site.posts limit:5 %}
+                <li class="sidebar-post-item">
+                  <a href="{{ post.url | relative_url }}" class="sidebar-post-link">
+                    <span class="sidebar-post-title">{{ post.title | truncate: 50 }}</span>
+                    <time datetime="{{ post.date | date_to_xmlschema }}" class="sidebar-post-date">
+                      {{ post.date | date: "%b %-d" }}
+                    </time>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+
+        <!-- Tags cloud -->
+        {% if site.tags.size > 0 %}
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">Popular Topics</h3>
+            <div class="sidebar-tags">
+              {% assign sorted_tags = site.tags | sort %}
+              {% for tag in sorted_tags limit:10 %}
+                {% assign tag_name = tag[0] %}
+                {% assign tag_count = tag[1].size %}
+                <a href="{{ site.baseurl }}/blog/tags/#{{ tag_name | slugify }}"
+                   class="sidebar-tag"
+                   data-count="{{ tag_count }}">
+                  {{ tag_name }}
+                </a>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+
+        <!-- Call to action -->
+        <div class="sidebar-section sidebar-cta">
+          <h3 class="sidebar-title">Explore More</h3>
+          <p class="sidebar-cta-text">Dive deeper into causal inference methods and applications.</p>
+          <a href="{{ site.baseurl }}/courses" class="button button-primary button-block">
+            Browse Courses
+          </a>
+          <a href="{{ site.baseurl }}/resources" class="button button-secondary button-block">
+            View Resources
+          </a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</article>

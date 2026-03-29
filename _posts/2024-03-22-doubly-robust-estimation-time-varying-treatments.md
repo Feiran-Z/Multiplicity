@@ -1,5 +1,6 @@
 ---
 layout: post
+layout_style: 'sophisticated'
 title: "Doubly Robust Estimation for Time‑Varying Treatments"
 date: 2024-03-22
 author: "Feiran Zhang"

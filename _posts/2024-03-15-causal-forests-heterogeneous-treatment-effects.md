@@ -1,5 +1,6 @@
 ---
 layout: post
+layout_style: 'sophisticated'
 title: "Causal Forests for Heterogeneous Treatment Effects"
 date: 2024-03-15
 author: "Feiran Zhang"

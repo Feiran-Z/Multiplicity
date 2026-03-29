@@ -23,8 +23,25 @@
 - **Sample Post**: Created `_posts/2026-03-22-sample-enhanced-blog-post.md` demonstrating all features
 - **Updated Posts**: Enhanced existing posts with new section structure
 
+## Sophisticated Layout Design
+- **New Layout System**: `_layouts/sophisticated.html` and `_includes/sophisticated-layout.html` with sidebar navigation
+- **Two-Column Design**: 3:1 content-to-sidebar ratio on desktop, stacked on mobile
+- **Interactive Features**: TOC with smooth scrolling, sticky sidebar, active section tracking
+- **Content Blocks**: Structured `.content-block` components for organized content presentation
+- **JavaScript Integration**: `assets/js/sophisticated-layout.js` for interactive features
+- **Demo Page**: `sophisticated-demo.md` showcasing all features with causal inference content
+- **Integration**: Updated `page.html` and `post.html` to optionally use sophisticated layout via `layout_style: 'sophisticated'`
+
 ## Design Patterns Established
 - **Section-Based Architecture**: Modular `.post-section-{type}` classes for each content section
 - **Color Block Strategy**: Subtle background colors with borders for visual separation
 - **Responsive Grid Navigation**: Previous/next links in grid layout that stacks on mobile
 - **Accessible Components**: Proper focus states, semantic HTML, WCAG AA contrast compliance
+- **Sophisticated Layout**: Sidebar navigation, content blocks, TOC, and interactive features
+
+## Key File Paths
+- `/Users/teacher/Desktop/Multiplicity/_layouts/sophisticated.html` - Main sophisticated layout
+- `/Users/teacher/Desktop/Multiplicity/_includes/sophisticated-layout.html` - Reusable layout include
+- `/Users/teacher/Desktop/Multiplicity/_sass/_components.scss` (lines 1290-1900+) - Sophisticated layout styles
+- `/Users/teacher/Desktop/Multiplicity/assets/js/sophisticated-layout.js` - Interactive features
+- `/Users/teacher/Desktop/Multiplicity/sophisticated-demo.md` - Demonstration page
