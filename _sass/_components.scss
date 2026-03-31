@@ -640,7 +640,246 @@
   margin-bottom: $spacing-16;
 }
 
-// About page specific components
+// Content components (used across multiple pages)
+.content-highlight {
+  background: linear-gradient(135deg, rgba($color-primary, 0.08) 0%, rgba($color-accent, 0.08) 100%);
+  border-left: 4px solid $color-primary;
+  padding: $spacing-6;
+  border-radius: 0 $border-radius-lg $border-radius-lg 0;
+  margin: $spacing-6 0;
+
+  .content-highlight-title {
+    font-family: $font-primary;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    color: $color-primary;
+    margin-bottom: $spacing-3;
+  }
+
+  .content-highlight-content {
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    line-height: $line-height-normal;
+    color: $color-text-primary;
+  }
+}
+
+.content-grid {
+  display: grid;
+  gap: $spacing-8;
+  grid-template-columns: repeat(1, 1fr);
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.content-grid-card {
+  background: $color-surface;
+  border-radius: $border-radius-lg;
+  padding: $spacing-6;
+  border: 2px solid $color-gray-200;
+  transition: all $transition-normal $transition-timing;
+
+  &:hover {
+    border-color: $color-primary;
+    transform: translateY(-2px);
+  }
+}
+
+.content-grid-card-header {
+  margin-bottom: $spacing-4;
+  padding-bottom: $spacing-4;
+  border-bottom: 1px solid $color-gray-200;
+}
+
+.content-grid-card-title {
+  font-family: $font-primary;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-2;
+}
+
+.content-grid-card-level {
+  display: inline-block;
+  padding: $spacing-1 $spacing-3;
+  border-radius: $border-radius-full;
+  font-family: $font-primary;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  background-color: $color-gray-100;
+  color: $color-text-secondary;
+}
+
+.content-grid-card-body {
+  flex: 1;
+  margin-bottom: $spacing-4;
+}
+
+.content-grid-card-description {
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  color: $color-text-secondary;
+  line-height: $line-height-normal;
+}
+
+.content-grid-card-footer {
+  padding-top: $spacing-4;
+  border-top: 1px solid $color-gray-200;
+}
+
+.content-grid-card-icon {
+  font-size: $font-size-4xl;
+  color: $color-primary;
+  margin-bottom: $spacing-4;
+}
+
+.content-grid-card-meta {
+  font-family: $font-primary;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  margin-bottom: $spacing-4;
+}
+
+.content-team-card {
+  background: $color-surface;
+  border-radius: $border-radius-xl;
+  box-shadow: $shadow-md;
+  padding: $spacing-6;
+  text-align: center;
+  border: 1px solid $color-gray-200;
+  transition: all $transition-normal $transition-timing;
+
+  &:hover {
+    box-shadow: $shadow-lg;
+    border-color: $color-primary;
+  }
+}
+
+.content-team-name {
+  font-family: $font-secondary;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-2;
+}
+
+.content-team-role {
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  color: $color-primary;
+  font-weight: $font-weight-medium;
+  margin-bottom: $spacing-4;
+}
+
+.content-team-bio {
+  font-family: $font-primary;
+  font-size: $font-size-sm;
+  line-height: $line-height-normal;
+  color: $color-text-secondary;
+  margin-bottom: $spacing-4;
+}
+
+.content-team-contact {
+  font-family: $font-primary;
+  font-size: $font-size-sm;
+  color: $color-accent;
+
+  a {
+    color: $color-accent;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.content-quote {
+  font-family: $font-secondary;
+  font-size: $font-size-2xl;
+  font-style: italic;
+  color: $color-text-primary;
+  text-align: center;
+  margin: $spacing-12 0;
+  padding: $spacing-8;
+  position: relative;
+
+  &::before {
+    content: '“';
+    position: absolute;
+    top: 0;
+    left: $spacing-4;
+    font-size: $font-size-6xl;
+    color: rgba($color-primary, 0.1);
+    font-family: $font-secondary;
+  }
+
+  &::after {
+    content: '”';
+    position: absolute;
+    bottom: -$spacing-4;
+    right: $spacing-4;
+    font-size: $font-size-6xl;
+    color: rgba($color-primary, 0.1);
+    font-family: $font-secondary;
+  }
+}
+
+.content-quote-author {
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  color: $color-text-secondary;
+  text-align: center;
+  margin-top: $spacing-4;
+  font-style: normal;
+}
+
+.content-faq {
+  margin: $spacing-8 0;
+}
+
+.content-faq-section {
+  margin-bottom: $spacing-8;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.content-faq-item {
+  margin-bottom: $spacing-6;
+  padding-bottom: $spacing-6;
+  border-bottom: 1px solid $color-gray-200;
+
+  &:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  h4 {
+    font-family: $font-primary;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    color: $color-primary;
+    margin-bottom: $spacing-2;
+  }
+
+  p {
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    color: $color-text-primary;
+    line-height: $line-height-normal;
+  }
+}
+
+// About page specific components (backward compatibility)
 .about-section {
   margin-bottom: $spacing-12;
   position: relative;
@@ -934,6 +1173,19 @@
   font-size: $font-size-base;
   line-height: $line-height-normal;
   color: $color-text-secondary;
+}
+
+// Content principle components (for about.md and other pages)
+.content-principle-number {
+  @extend .about-principle-number;
+}
+
+.content-principle-title {
+  @extend .about-principle-title;
+}
+
+.content-principle-description {
+  @extend .about-principle-description;
 }
 
 // Post components

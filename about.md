@@ -11,7 +11,7 @@ description: "Learn about the Multiplicity: Roads Not Taken project and its miss
   <div class="content-card">
     <h3>Our Vision</h3>
     <div class="content-card-body">
-      <p><strong>Multiplicity: Roads Not Taken</strong> is an educational initiative dedicated to exploring the fundamental questions of causal inference. Our name draws inspiration from Robert Frost's poem, which captures the human curiosity about alternative paths—the "what ifs" that shape both personal journeys and scientific inquiry.</p>
+      <p><strong>Multiplicity: Roads Not Taken</strong> is an educational initiative dedicated to exploring the fundamental questions of and current developments in causal inference. Our name draws inspiration from Robert Frost's poem, which captures the human curiosity about alternative paths—the "what ifs" that shape both personal journeys and scientific inquiry.</p>
 
       <div class="content-highlight">
         <div class="content-highlight-title">The Core Question</div>
@@ -31,27 +31,27 @@ description: "Learn about the Multiplicity: Roads Not Taken project and its miss
 
       <div class="content-grid">
         <div class="content-grid-card">
-          <div class="about-principle-number">1</div>
-          <div class="about-principle-title">Demystify causal inference</div>
-          <div class="about-principle-description">Provide clear, accessible educational resources that make complex concepts understandable</div>
+          <div class="content-principle-number">1</div>
+          <div class="content-principle-title">Demystify causal inference</div>
+          <div class="content-principle-description">Provide clear, accessible educational resources that make complex concepts understandable</div>
         </div>
 
         <div class="content-grid-card">
-          <div class="about-principle-number">2</div>
-          <div class="about-principle-title">Bridge theory and practice</div>
-          <div class="about-principle-description">Offer concrete examples and implementation guidance with real code and data</div>
+          <div class="content-principle-number">2</div>
+          <div class="content-principle-title">Bridge theory and practice</div>
+          <div class="content-principle-description">Offer concrete examples and implementation guidance with real code and data</div>
         </div>
 
         <div class="content-grid-card">
-          <div class="about-principle-number">3</div>
-          <div class="about-principle-title">Foster a community</div>
-          <div class="about-principle-description">Connect learners, researchers, and practitioners interested in causal methods</div>
+          <div class="content-principle-number">3</div>
+          <div class="content-principle-title">Foster a community</div>
+          <div class="content-principle-description">Connect learners, researchers, and practitioners interested in causal methods</div>
         </div>
 
         <div class="content-grid-card">
-          <div class="about-principle-number">4</div>
-          <div class="about-principle-title">Explore philosophical dimensions</div>
-          <div class="about-principle-description">Examine the deeper implications of counterfactual thinking across disciplines</div>
+          <div class="content-principle-number">4</div>
+          <div class="content-principle-title">Explore philosophical dimensions</div>
+          <div class="content-principle-description">Examine the deeper implications of counterfactual thinking across disciplines</div>
         </div>
       </div>
     </div>
@@ -86,27 +86,27 @@ description: "Learn about the Multiplicity: Roads Not Taken project and its miss
 
       <div class="content-grid">
         <div class="content-grid-card">
-          <div class="about-principle-number">1</div>
-          <div class="about-principle-title">Story First</div>
-          <div class="about-principle-description">Begin with relatable narratives that illustrate why causal questions matter in real-world contexts</div>
+          <div class="content-principle-number">1</div>
+          <div class="content-principle-title">Story First</div>
+          <div class="content-principle-description">Begin with relatable narratives that illustrate why causal questions matter in real-world contexts</div>
         </div>
 
         <div class="content-grid-card">
-          <div class="about-principle-number">2</div>
-          <div class="about-principle-title">Theory Second</div>
-          <div class="about-principle-description">Explain the mathematical and conceptual foundations clearly without unnecessary jargon</div>
+          <div class="content-principle-number">2</div>
+          <div class="content-principle-title">Theory Second</div>
+          <div class="content-principle-description">Explain the mathematical and conceptual foundations clearly without unnecessary jargon</div>
         </div>
 
         <div class="content-grid-card">
-          <div class="about-principle-number">3</div>
-          <div class="about-principle-title">Practice Third</div>
-          <div class="about-principle-description">Provide hands-on examples with real code and data for immediate application</div>
+          <div class="content-principle-number">3</div>
+          <div class="content-principle-title">Practice Third</div>
+          <div class="content-principle-description">Provide hands-on examples with real code and data for immediate application</div>
         </div>
 
         <div class="content-grid-card">
-          <div class="about-principle-number">4</div>
-          <div class="about-principle-title">Reflection Last</div>
-          <div class="about-principle-description">Encourage critical thinking about assumptions, limitations, and ethical implications</div>
+          <div class="content-principle-number">4</div>
+          <div class="content-principle-title">Reflection Last</div>
+          <div class="content-principle-description">Encourage critical thinking about assumptions, limitations, and ethical implications</div>
         </div>
       </div>
     </div>
@@ -141,33 +141,33 @@ description: "Learn about the Multiplicity: Roads Not Taken project and its miss
 
       <div class="content-grid">
         <div class="content-grid-card">
-          <div class="about-principle-number">A</div>
-          <div class="about-principle-title">Accessibility</div>
-          <div class="about-principle-description">Complex ideas explained in plain language without sacrificing precision</div>
+          <div class="content-principle-number">A</div>
+          <div class="content-principle-title">Accessibility</div>
+          <div class="content-principle-description">Complex ideas explained in plain language without sacrificing precision</div>
         </div>
 
         <div class="content-grid-card">
-          <div class="about-principle-number">R</div>
-          <div class="about-principle-title">Rigor</div>
-          <div class="about-principle-description">Mathematically sound foundations presented without unnecessary jargon</div>
+          <div class="content-principle-number">R</div>
+          <div class="content-principle-title">Rigor</div>
+          <div class="content-principle-description">Mathematically sound foundations presented without unnecessary jargon</div>
         </div>
 
         <div class="content-grid-card">
-          <div class="about-principle-number">P</div>
-          <div class="about-principle-title">Practicality</div>
-          <div class="about-principle-description">Real-world examples with implementable code in R and Python</div>
+          <div class="content-principle-number">P</div>
+          <div class="content-principle-title">Practicality</div>
+          <div class="content-principle-description">Real-world examples with implementable code in R and Python</div>
         </div>
 
         <div class="content-grid-card">
-          <div class="about-principle-number">T</div>
-          <div class="about-principle-title">Transparency</div>
-          <div class="about-principle-description">Clear discussion of assumptions, limitations, and methodological choices</div>
+          <div class="content-principle-number">T</div>
+          <div class="content-principle-title">Transparency</div>
+          <div class="content-principle-description">Clear discussion of assumptions, limitations, and methodological choices</div>
         </div>
 
         <div class="content-grid-card">
-          <div class="about-principle-number">I</div>
-          <div class="about-principle-title">Interdisciplinary</div>
-          <div class="about-principle-description">Drawing insights from economics, epidemiology, computer science, and philosophy</div>
+          <div class="content-principle-number">I</div>
+          <div class="content-principle-title">Interdisciplinary</div>
+          <div class="content-principle-description">Drawing insights from economics, epidemiology, computer science, and philosophy</div>
         </div>
       </div>
     </div>
@@ -179,13 +179,13 @@ description: "Learn about the Multiplicity: Roads Not Taken project and its miss
 
   <div class="content-grid">
     <div class="content-team-card">
-      <div class="about-team-name">Feiran Zhang</div>
-      <div class="about-team-role">Project Founder & Lead</div>
-      <div class="about-team-bio">
+      <div class="content-team-name">Feiran Zhang</div>
+      <div class="content-team-role">Project Founder & Lead</div>
+      <div class="content-team-bio">
         <p>Former Ph.D. candidate in International and Development Economics with six years of graduate training in econometrics and causal inference methods.</p>
         <p>Research interests include causal inference, program evaluation, development economics, and the intersection of statistical methods with real-world policy questions.</p>
       </div>
-      <div class="about-team-contact">
+      <div class="content-team-contact">
         Contact: <a href="mailto:zephyr.v@outlook.com">zephyr.v@outlook.com</a>
       </div>
     </div>
@@ -238,27 +238,27 @@ description: "Learn about the Multiplicity: Roads Not Taken project and its miss
 
       <div class="content-grid">
         <div class="content-grid-card">
-          <div class="about-principle-number">📚</div>
-          <div class="about-principle-title">Learn</div>
-          <div class="about-principle-description">Take our courses, explore the resources, and deepen your understanding of causal inference</div>
+          <div class="content-principle-number">📚</div>
+          <div class="content-principle-title">Learn</div>
+          <div class="content-principle-description">Take our courses, explore the resources, and deepen your understanding of causal inference</div>
         </div>
 
         <div class="content-grid-card">
-          <div class="about-principle-number">📢</div>
-          <div class="about-principle-title">Share</div>
-          <div class="about-principle-description">Recommend content to colleagues, students, or anyone interested in causal methods</div>
+          <div class="content-principle-number">📢</div>
+          <div class="content-principle-title">Share</div>
+          <div class="content-principle-description">Recommend content to colleagues, students, or anyone interested in causal methods</div>
         </div>
 
         <div class="content-grid-card">
-          <div class="about-principle-number">✏️</div>
-          <div class="about-principle-title">Contribute</div>
-          <div class="about-principle-description">Submit corrections, suggestions, or propose new content through our contact form</div>
+          <div class="content-principle-number">✏️</div>
+          <div class="content-principle-title">Contribute</div>
+          <div class="content-principle-description">Submit corrections, suggestions, or propose new content through our contact form</div>
         </div>
 
         <div class="content-grid-card">
-          <div class="about-principle-number">💬</div>
-          <div class="about-principle-title">Connect</div>
-          <div class="about-principle-description">Join discussions on causal inference topics and share your perspectives</div>
+          <div class="content-principle-number">💬</div>
+          <div class="content-principle-title">Connect</div>
+          <div class="content-principle-description">Join discussions on causal inference topics and share your perspectives</div>
         </div>
       </div>
     </div>
