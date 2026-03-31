@@ -1583,6 +1583,19 @@
     // Main content gets 3 parts, TOC and sidebar get 1 part each
     grid-template-columns: minmax(280px, 350px) minmax(0, 3fr) minmax(280px, 350px);
     gap: $spacing-12;
+
+    // Explicitly place grid items in their columns
+    .content-toc {
+      grid-column: 1;
+    }
+
+    .main-content {
+      grid-column: 2;
+    }
+
+    .sidebar {
+      grid-column: 3;
+    }
   }
 }
 
@@ -1656,16 +1669,11 @@
 }
 
 .content-sections {
-  display: grid;
+  // This is now a flex container for the content blocks within the main content area
+  // The TOC and sidebar are separate grid items in the parent .layout-grid
+  display: flex;
+  flex-direction: column;
   gap: $spacing-8;
-  grid-template-columns: 1fr;
-
-  @media (min-width: $breakpoint-lg) {
-    // TOC and main content within the middle column
-    // The TOC is now in its own grid column (left), not inside main content
-    grid-template-columns: 1fr;
-    gap: $spacing-8;
-  }
 }
 
 .content-toc {
@@ -1823,11 +1831,8 @@
 }
 
 .content-blocks {
-  // Main content area
-  @media (min-width: $breakpoint-lg) {
-    // Clear the float from TOC
-    overflow: hidden;
-  }
+  // Main content area - contains the actual content blocks
+  // No special styling needed as it's just a container
 }
 
 .content-block {
@@ -2159,20 +2164,9 @@
   }
 }
 
-@media (min-width: $breakpoint-lg) {
-  // Ensure proper grid placement for three-column layout
-  .content-toc {
-    grid-column: 1; // TOC in the left column (1fr)
-  }
-
-  .main-content {
-    grid-column: 2; // Main content in the middle column (3fr)
-  }
-
-  .sidebar {
-    grid-column: 3; // Sidebar in the right column (1fr)
-  }
-}
+// Note: Grid column placement is now handled within .layout-grid media query
+// These duplicate rules are no longer needed as they're already defined
+// within the .layout-grid @media (min-width: $breakpoint-lg) block
 
 @media (max-width: $breakpoint-sm) {
   .sophisticated-layout {
