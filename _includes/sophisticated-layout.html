@@ -29,21 +29,6 @@
         </header>
 
         <div class="content-sections">
-          <!-- Table of Contents (auto-generated from headings) -->
-          {% if page.toc != false %}
-            <aside class="content-toc">
-              <div class="toc-header">
-                <h3 class="toc-title">Contents</h3>
-                <button class="toc-toggle" aria-label="Toggle table of contents" aria-expanded="true">
-                  <span class="toc-toggle-icon"></span>
-                </button>
-              </div>
-              <nav class="toc-nav" aria-label="Table of contents">
-                {% include toc.html html=content %}
-              </nav>
-            </aside>
-          {% endif %}
-
           <!-- Main content blocks -->
           <div class="content-blocks">
             {{ content }}
@@ -70,6 +55,21 @@
           {% endif %}
         </footer>
       </main>
+
+      <!-- Table of Contents (auto-generated from headings) -->
+      {% if page.toc != false %}
+        <aside class="content-toc">
+          <div class="toc-header">
+            <h3 class="toc-title">Contents</h3>
+            <button class="toc-toggle" aria-label="Toggle table of contents" aria-expanded="true">
+              <span class="toc-toggle-icon"></span>
+            </button>
+          </div>
+          <nav class="toc-nav" aria-label="Table of contents">
+            {% include toc.html html=content %}
+          </nav>
+        </aside>
+      {% endif %}
 
       <!-- Sidebar -->
       <aside class="sidebar">
