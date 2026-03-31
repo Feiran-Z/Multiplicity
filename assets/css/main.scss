@@ -370,44 +370,6 @@
   font-style: italic;
 }
 
-// Contact form
-.contact-form {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.form-actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: $spacing-4;
-  margin-top: $spacing-6;
-}
-
-// Social links
-.social-links {
-  display: flex;
-  gap: $spacing-4;
-  margin-top: $spacing-6;
-}
-
-.social-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: $border-radius-full;
-  background-color: $color-gray-100;
-  color: $color-text-secondary;
-  text-decoration: none;
-  transition: background-color $transition-normal $transition-timing,
-              color $transition-normal $transition-timing;
-
-  &:hover {
-    background-color: $color-primary;
-    color: white;
-  }
-}
 
 // Blog listing
 .blog-list {

@@ -22,9 +22,9 @@
         <ul class="footer-links">
           <li><a href="{{ site.baseurl }}/contact/">Contact Form</a></li>
           <li><a href="mailto:{{ site.author.email }}">Email</a></li>
-          <li><a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener noreferrer">GitHub</a></li>
           {% if site.author.twitter %}
-            <li><a href="https://twitter.com/{{ site.author.twitter }}" target="_blank" rel="noopener">Twitter</a></li>
+            <li><a href="https://twitter.com/{{ site.author.twitter }}" target="_blank" rel="noopener noreferrer">Twitter</a></li>
           {% endif %}
         </ul>
       </div>
@@ -35,7 +35,7 @@
         &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. All rights reserved.
       </p>
       <p class="license">
-        Content licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>
+        Content licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>
       </p>
     </div>
   </div>

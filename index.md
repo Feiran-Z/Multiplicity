@@ -8,7 +8,7 @@ description: "An educational website on causal inference, exploring alternative 
 <div class="banner" id="banner">
   <div class="banner-content">
     <h1 class="banner-title">Multiplicity: Roads Not Taken</h1>
-    <div class="banner-typewriter">
+    <div class="banner-typewriter" aria-live="polite">
       <span id="typewriter-text"></span>
       <span class="typewriter-cursor" aria-hidden="true"></span>
     </div>
@@ -141,28 +141,3 @@ description: "An educational website on causal inference, exploring alternative 
 
 <script src="{{ site.baseurl }}/assets/js/home.js" defer></script>
 
-<style>
-.section-title {
-  font-family: var(--font-secondary);
-  font-size: 2.25rem;
-  font-weight: 600;
-  color: var(--color-text-primary);
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.section-subtitle {
-  font-family: var(--font-primary);
-  font-size: 1.125rem;
-  color: var(--color-text-secondary);
-  text-align: center;
-  margin-bottom: 3rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.courses-section {
-  padding: 4rem 0;
-}
-</style>

@@ -368,45 +368,6 @@
   font-style: italic;
 }
 
-// Contact form
-.contact-form {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.form-actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: $spacing-4;
-  margin-top: $spacing-6;
-}
-
-// Social links
-.social-links {
-  display: flex;
-  gap: $spacing-4;
-  margin-top: $spacing-6;
-}
-
-.social-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: $border-radius-full;
-  background-color: $color-gray-100;
-  color: $color-text-secondary;
-  text-decoration: none;
-  transition: background-color $transition-normal $transition-timing,
-              color $transition-normal $transition-timing;
-
-  &:hover {
-    background-color: $color-primary;
-    color: white;
-  }
-}
-
 // Blog listing
 .blog-list {
   display: grid;
@@ -528,7 +489,14 @@
   .site-footer,
   .banner,
   .scroll-indicator,
-  .menu-toggle {
+  .menu-toggle,
+  .social-links,
+  .form-actions,
+  .button,
+  .sidebar,
+  .content-toc,
+  .content-navigation,
+  .post-navigation {
     display: none !important;
   }
 
@@ -536,11 +504,13 @@
     background-color: white;
     color: black;
     font-size: 12pt;
+    line-height: 1.5;
   }
 
   .container {
     max-width: 100%;
     padding: 0;
+    margin: 0;
   }
 
   a {
@@ -548,29 +518,79 @@
     text-decoration: underline;
   }
 
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+    color: #666;
+  }
+
+  a[href^="#"]:after,
+  a[href^="/"]:after {
+    content: "";
+  }
+
   .page-content,
-  .post-content {
+  .post-content,
+  .content-block,
+  .content-card {
     margin-bottom: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    background: none;
   }
 
   h1, h2, h3, h4, h5, h6 {
     page-break-after: avoid;
+    color: black;
   }
 
-  p, ul, ol, dl {
+  p, ul, ol, dl, li {
     page-break-inside: avoid;
   }
 
-  pre, blockquote {
-    page-break-inside: avoid;
-  }
-
-  table {
+  pre, blockquote, table {
     page-break-inside: avoid;
   }
 
   img {
     page-break-inside: avoid;
     page-break-after: avoid;
+    max-width: 100% !important;
+  }
+
+  .course-grid,
+  .blog-list,
+  .resources-grid {
+    display: block !important;
+  }
+
+  .course-card,
+  .blog-post-card,
+  .resource-card {
+    break-inside: avoid;
+    margin-bottom: 1cm;
+    border: 1px solid #ddd;
+    padding: 0.5cm;
+  }
+
+  // Hide decorative elements
+  .content-quote::before,
+  .content-quote::after,
+  .page-title::after,
+  .about-section-title::after,
+  .post-section-title::after {
+    display: none;
+  }
+
+  // Ensure proper spacing
+  .content-block + .content-block {
+    margin-top: 1cm;
+  }
+
+  // Remove animations and transitions
+  * {
+    animation: none !important;
+    transition: none !important;
   }
 }

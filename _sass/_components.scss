@@ -18,6 +18,10 @@
   transition: all $transition-normal $transition-timing;
   min-height: 44px; // Accessibility minimum touch target
 
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+
   &:focus {
     outline: 2px solid $color-primary;
     outline-offset: 2px;
@@ -179,6 +183,55 @@
   color: $color-success;
 }
 
+// Contact form
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: $spacing-4;
+  margin-top: $spacing-6;
+}
+
+// Social links
+.social-links {
+  display: flex;
+  gap: $spacing-4;
+  margin-top: $spacing-6;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: $border-radius-full;
+  background-color: $color-gray-100;
+  color: $color-text-secondary;
+  text-decoration: none;
+  transition: all $transition-normal $transition-timing;
+
+  &:hover {
+    background-color: $color-primary;
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  &:focus {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
 // Cards
 .card {
   background-color: $color-surface;
@@ -212,13 +265,54 @@
   color: $color-text-secondary;
 }
 
+// Content card components (used in about.md, courses.md, resources.md, contact.md)
+.content-card {
+  @extend .card;
+  // Additional specific styles if needed
+}
+
+.content-card-title {
+  @extend .card-title;
+}
+
+.content-card-subtitle {
+  @extend .card-subtitle;
+}
+
 .card-body {
   margin-bottom: $spacing-4;
+}
+
+.content-card-content {
+  @extend .card-body;
 }
 
 .card-footer {
   padding-top: $spacing-4;
   border-top: 1px solid $color-gray-200;
+}
+
+// Skip link for keyboard users
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: $spacing-4;
+  background-color: $color-primary;
+  color: white;
+  padding: $spacing-2 $spacing-4;
+  border-radius: $border-radius-md;
+  text-decoration: none;
+  font-family: $font-primary;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  z-index: $z-index-modal + 1;
+  transition: top $transition-normal $transition-timing;
+
+  &:focus {
+    top: $spacing-4;
+    outline: 2px solid white;
+    outline-offset: 2px;
+  }
 }
 
 // Navigation
@@ -235,6 +329,7 @@
   align-items: center;
   justify-content: space-between;
   padding: $spacing-4 0;
+  position: relative;
 }
 
 .site-logo {
@@ -987,28 +1082,7 @@
   }
 }
 
-.about-highlight {
-  background: linear-gradient(135deg, rgba($color-primary, 0.08) 0%, rgba($color-accent, 0.08) 100%);
-  border-left: 4px solid $color-primary;
-  padding: $spacing-6;
-  border-radius: 0 $border-radius-lg $border-radius-lg 0;
-  margin: $spacing-6 0;
-
-  .about-highlight-title {
-    font-family: $font-primary;
-    font-size: $font-size-lg;
-    font-weight: $font-weight-semibold;
-    color: $color-primary;
-    margin-bottom: $spacing-3;
-  }
-
-  .about-highlight-content {
-    font-family: $font-primary;
-    font-size: $font-size-base;
-    line-height: $line-height-normal;
-    color: $color-text-primary;
-  }
-}
+// .about-highlight removed - use .content-highlight instead
 
 .about-grid {
   display: grid;
@@ -1024,99 +1098,9 @@
   }
 }
 
-.about-team-card {
-  background: $color-surface;
-  border-radius: $border-radius-xl;
-  box-shadow: $shadow-md;
-  padding: $spacing-6;
-  text-align: center;
-  border: 1px solid $color-gray-200;
-  transition: all $transition-normal $transition-timing;
+// .about-team-* classes removed - use .content-team-* classes instead
 
-  &:hover {
-    box-shadow: $shadow-lg;
-    border-color: $color-primary;
-  }
-}
-
-.about-team-name {
-  font-family: $font-secondary;
-  font-size: $font-size-xl;
-  font-weight: $font-weight-semibold;
-  color: $color-text-primary;
-  margin-bottom: $spacing-2;
-}
-
-.about-team-role {
-  font-family: $font-primary;
-  font-size: $font-size-base;
-  color: $color-primary;
-  font-weight: $font-weight-medium;
-  margin-bottom: $spacing-4;
-}
-
-.about-team-bio {
-  font-family: $font-primary;
-  font-size: $font-size-sm;
-  line-height: $line-height-normal;
-  color: $color-text-secondary;
-  margin-bottom: $spacing-4;
-}
-
-.about-team-contact {
-  font-family: $font-primary;
-  font-size: $font-size-sm;
-  color: $color-accent;
-
-  a {
-    color: $color-accent;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
-
-.about-quote {
-  font-family: $font-secondary;
-  font-size: $font-size-2xl;
-  font-style: italic;
-  color: $color-text-primary;
-  text-align: center;
-  margin: $spacing-12 0;
-  padding: $spacing-8;
-  position: relative;
-
-  &::before {
-    content: '“';
-    position: absolute;
-    top: 0;
-    left: $spacing-4;
-    font-size: $font-size-6xl;
-    color: rgba($color-primary, 0.1);
-    font-family: $font-secondary;
-  }
-
-  &::after {
-    content: '”';
-    position: absolute;
-    bottom: -$spacing-4;
-    right: $spacing-4;
-    font-size: $font-size-6xl;
-    color: rgba($color-primary, 0.1);
-    font-family: $font-secondary;
-  }
-}
-
-.about-quote-author {
-  font-family: $font-primary;
-  font-size: $font-size-base;
-  color: $color-text-secondary;
-  text-align: center;
-  margin-top: $spacing-4;
-  font-style: normal;
-}
+// .about-quote and .about-quote-author removed - use .content-quote and .content-quote-author instead
 
 .about-principles-grid {
   display: grid;
@@ -1173,6 +1157,45 @@
   font-size: $font-size-base;
   line-height: $line-height-normal;
   color: $color-text-secondary;
+}
+
+// Section title components (used in homepage and other pages)
+.section-title {
+  font-family: $font-secondary;
+  font-size: $font-size-4xl;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  text-align: center;
+  margin-bottom: $spacing-4;
+
+  @media (max-width: $breakpoint-sm) {
+    font-size: $font-size-3xl;
+  }
+}
+
+.section-subtitle {
+  font-family: $font-primary;
+  font-size: $font-size-lg;
+  color: $color-text-secondary;
+  text-align: center;
+  margin-bottom: $spacing-12;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: $line-height-normal;
+
+  @media (max-width: $breakpoint-sm) {
+    font-size: $font-size-base;
+    margin-bottom: $spacing-8;
+  }
+}
+
+.courses-section {
+  padding: $spacing-16 0;
+
+  @media (max-width: $breakpoint-sm) {
+    padding: $spacing-8 0;
+  }
 }
 
 // Content principle components (for about.md and other pages)

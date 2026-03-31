@@ -93,6 +93,10 @@ a {
   text-decoration: none;
   transition: color $transition-fast $transition-timing;
 
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+
   &:hover {
     color: $color-secondary;
   }

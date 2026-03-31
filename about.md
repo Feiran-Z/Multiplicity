@@ -9,8 +9,8 @@ description: "Learn about the Multiplicity: Roads Not Taken project and its miss
   <h2>About Multiplicity: Roads Not Taken</h2>
 
   <div class="content-card">
-    <h3>Our Vision</h3>
-    <div class="content-card-body">
+    <h2 class="content-card-title">Our Vision</h2>
+    <div class="content-card-content">
       <p><strong>Multiplicity: Roads Not Taken</strong> is an educational initiative dedicated to exploring the fundamental questions of and current developments in causal inference. Our name draws inspiration from Robert Frost's poem, which captures the human curiosity about alternative paths—the "what ifs" that shape both personal journeys and scientific inquiry.</p>
 
       <div class="content-highlight">
@@ -25,7 +25,7 @@ description: "Learn about the Multiplicity: Roads Not Taken project and its miss
   <h2 class="content-block-title">Our Mission</h2>
 
   <div class="content-card">
-    <h3 class="content-card-title">Why Causal Inference Matters</h3>
+    <h2 class="content-card-title">Why Causal Inference Matters</h2>
     <div class="content-card-content">
       <p>We believe that understanding cause and effect is essential for making informed decisions in research, policy, and everyday life. Yet, causal questions are inherently about counterfactuals: outcomes that were not observed, paths that were not taken.</p>
 
@@ -62,7 +62,7 @@ description: "Learn about the Multiplicity: Roads Not Taken project and its miss
   <h2 class="content-block-title">The Rubin Causal Model</h2>
 
   <div class="content-card">
-    <h3 class="content-card-title">Potential Outcomes Framework</h3>
+    <h2 class="content-card-title">Potential Outcomes Framework</h2>
     <div class="content-card-content">
       <p>At the heart of our approach is Donald Rubin's potential outcomes framework, which formalizes the idea that for each unit (person, school, country) and each treatment, there exists a set of potential outcomes—one for each possible treatment level.</p>
 
@@ -80,7 +80,7 @@ description: "Learn about the Multiplicity: Roads Not Taken project and its miss
   <h2 class="content-block-title">Educational Philosophy</h2>
 
   <div class="content-card">
-    <h3 class="content-card-title">A Layered Approach to Learning</h3>
+    <h2 class="content-card-title">A Layered Approach to Learning</h2>
     <div class="content-card-content">
       <p>We believe that effective education requires multiple entry points and reinforcement at different levels of abstraction. Our approach mirrors the scientific process itself: observation, hypothesis, testing, and interpretation.</p>
 
@@ -117,7 +117,7 @@ description: "Learn about the Multiplicity: Roads Not Taken project and its miss
   <h2 class="content-block-title">Project Origins</h2>
 
   <div class="content-card">
-    <h3 class="content-card-title">A Personal Fork in the Road</h3>
+    <h2 class="content-card-title">A Personal Fork in the Road</h2>
     <div class="content-card-content">
       <p>This project emerged from a personal academic journey. After six years in a Ph.D. program in international and development economics, I faced a fork in the road: continue on the expected academic path or explore alternative directions.</p>
 
@@ -135,7 +135,7 @@ description: "Learn about the Multiplicity: Roads Not Taken project and its miss
   <h2 class="content-block-title">Content Approach</h2>
 
   <div class="content-card">
-    <h3 class="content-card-title">Our Guiding Principles</h3>
+    <h2 class="content-card-title">Our Guiding Principles</h2>
     <div class="content-card-content">
       <p>All our content is crafted with careful attention to both substance and presentation. We believe that educational materials should be as rigorous as they are accessible.</p>
 
@@ -201,7 +201,7 @@ description: "Learn about the Multiplicity: Roads Not Taken project and its miss
   <h2 class="content-block-title">Acknowledgments</h2>
 
   <div class="content-card">
-    <h3 class="content-card-title">Gratitude & Inspiration</h3>
+    <h2 class="content-card-title">Gratitude & Inspiration</h2>
     <div class="content-card-content">
       <p>This project stands on the shoulders of giants and benefits from countless contributions from the academic and open-source communities.</p>
 
@@ -232,7 +232,7 @@ description: "Learn about the Multiplicity: Roads Not Taken project and its miss
   <h2 class="content-block-title">Get Involved</h2>
 
   <div class="content-card">
-    <h3 class="content-card-title">Join Our Community</h3>
+    <h2 class="content-card-title">Join Our Community</h2>
     <div class="content-card-content">
       <p>This project is built for and by the community. We believe that education thrives through collaboration, feedback, and shared exploration.</p>
 
@@ -269,18 +269,18 @@ description: "Learn about the Multiplicity: Roads Not Taken project and its miss
   <h2 class="content-block-title">License & Usage</h2>
 
   <div class="content-card">
-    <h3 class="content-card-title">Open Educational Resources</h3>
+    <h2 class="content-card-title">Open Educational Resources</h2>
     <div class="content-card-content">
       <p>We believe in making educational materials as accessible as possible while protecting certain usage rights.</p>
 
       <div class="content-highlight">
         <div class="content-highlight-title">Educational Content License</div>
-        <div class="content-highlight-content">All educational content on this site is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>. This allows sharing and adaptation for non-commercial purposes with proper attribution.</div>
+        <div class="content-highlight-content">All educational content on this site is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>. This allows sharing and adaptation for non-commercial purposes with proper attribution.</div>
       </div>
 
       <div class="content-highlight">
         <div class="content-highlight-title">Code License</div>
-        <div class="content-highlight-content">Code examples are provided under the <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a>, offering maximum flexibility for reuse in both open-source and commercial projects.</div>
+        <div class="content-highlight-content">Code examples are provided under the <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer">MIT License</a>, offering maximum flexibility for reuse in both open-source and commercial projects.</div>
       </div>
     </div>
   </div>
@@ -290,7 +290,7 @@ description: "Learn about the Multiplicity: Roads Not Taken project and its miss
   <h2 class="content-block-title">Contact</h2>
 
   <div class="content-card">
-    <h3 class="content-card-title">Get in Touch</h3>
+    <h2 class="content-card-title">Get in Touch</h2>
     <div class="content-card-content">
       <p>We welcome questions, suggestions, collaboration inquiries, and feedback from the community.</p>
 

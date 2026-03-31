@@ -1,16 +1,18 @@
 <header class="site-header">
   <div class="container">
     <div class="header-content">
+      <a href="#main-content" class="skip-link">Skip to main content</a>
+
       <a href="{{ site.baseurl }}/" class="site-logo">
         <span class="logo-text">Multiplicity</span>
         <span class="logo-subtitle">Roads Not Taken</span>
       </a>
 
-      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
         <span class="menu-icon"></span>
       </button>
 
-      <nav class="site-nav">
+      <nav class="site-nav" id="site-nav">
         <ul class="nav-list">
           {% for item in site.data.navigation %}
             <li class="nav-item">
