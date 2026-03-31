@@ -73,23 +73,6 @@
 
       <!-- Sidebar -->
       <aside class="sidebar">
-        <!-- Quick navigation -->
-        <div class="sidebar-section">
-          <h3 class="sidebar-title">Quick Navigation</h3>
-          <nav class="sidebar-nav" aria-label="Quick navigation">
-            <ul class="sidebar-nav-list">
-              {% for item in site.data.navigation %}
-                <li class="sidebar-nav-item">
-                  <a href="{{ site.baseurl }}{{ item.link }}"
-                     class="sidebar-nav-link {% if page.url == item.link %}active{% endif %}">
-                    {{ item.name }}
-                  </a>
-                </li>
-              {% endfor %}
-            </ul>
-          </nav>
-        </div>
-
         <!-- Recent posts -->
         {% if site.posts.size > 0 %}
           <div class="sidebar-section">

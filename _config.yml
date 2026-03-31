@@ -18,6 +18,9 @@ author:
 markdown: kramdown
 highlighter: rouge
 permalink: pretty
+kramdown:
+  auto_ids: true
+  toc_levels: 2..3
 
 # Collections
 collections:
