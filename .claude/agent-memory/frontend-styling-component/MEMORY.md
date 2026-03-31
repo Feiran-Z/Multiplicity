@@ -45,3 +45,18 @@
 - `/Users/teacher/Desktop/Multiplicity/_sass/_components.scss` (lines 1290-1900+) - Sophisticated layout styles
 - `/Users/teacher/Desktop/Multiplicity/assets/js/sophisticated-layout.js` - Interactive features
 - `/Users/teacher/Desktop/Multiplicity/sophisticated-demo.md` - Demonstration page
+
+## TOC & Sidebar Analysis
+- **Sophisticated Layout**: Used by pages with `layout_style: 'sophisticated'` (about, courses, resources, blog, contact, posts)
+- **Grid System**: Flexible grid with minmax constraints (`minmax(280px, 350px) minmax(0, 1fr)`)
+- **TOC Placement**: Inside `.content-sections` with TOC getting fixed width range, content flexible
+- **Container Constraints**: `.container` has `max-width: 1280px` with padding, `.container-flexible` option for wider layouts
+- **Width Constraints**: TOC/sidebar have `min-width: 280px, max-width: 350px` for consistent sizing
+- **Responsive Design**: Mobile layouts remove constraints and stack components vertically
+
+## TOC & Sidebar Width Fixes
+- **Implemented**: Min/max width constraints (280-350px) for `.content-toc` and `.sidebar`
+- **Grid Updates**: Changed from fixed 3:1 ratios to flexible `minmax()` grid templates
+- **Container Flexibility**: Added `.container-flexible` class with wider max-width (1400-1600px)
+- **Mobile Override**: Constraints removed on mobile for better stacking
+- **Files Modified**: `_components.scss` (TOC, sidebar, grid layouts), `_base.scss` (container)

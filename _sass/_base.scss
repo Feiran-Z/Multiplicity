@@ -223,6 +223,15 @@ hr {
   @media (min-width: $breakpoint-lg) {
     padding: 0 $spacing-6;
   }
+
+  // Allow container to be more flexible for sophisticated layouts
+  &.container-flexible {
+    max-width: 1400px;
+
+    @media (min-width: $breakpoint-2xl) {
+      max-width: 1600px;
+    }
+  }
 }
 
 // Utility classes
