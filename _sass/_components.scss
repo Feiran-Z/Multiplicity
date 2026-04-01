@@ -1585,12 +1585,14 @@
   gap: $spacing-8;
   grid-template-columns: 1fr;
 
-  @media (min-width: $breakpoint-lg) {
+  // Activate 3-column layout earlier than 1024px so TOC/sidebar
+  // don't drop below content on common tablet/smaller-laptop widths.
+  @media (min-width: $breakpoint-md) {
     // Three-column layout with 1:3:1 ratio (TOC:Content:Sidebar)
     // Using minmax() to prevent TOC/sidebar from wrapping while maintaining ratio
-    // TOC: min 250px, max 350px | Content: flexible | Sidebar: min 250px, max 350px
-    grid-template-columns: minmax(250px, 350px) minmax(0, 1fr) minmax(250px, 350px);
-    gap: $spacing-12;
+    // TOC: min 200px, max 320px | Content: flexible | Sidebar: min 200px, max 320px
+    grid-template-columns: minmax(200px, 320px) minmax(0, 1fr) minmax(200px, 320px);
+    gap: $spacing-10;
 
     // Explicitly place grid items in their columns
     .content-toc {
@@ -1707,7 +1709,7 @@
   // Width is now controlled by grid layout with minmax constraints
   width: 100%;
 
-  @media (min-width: $breakpoint-lg) {
+  @media (min-width: $breakpoint-md) {
     // In the 1:3:1 layout, TOC is in the left grid column with minmax constraints
     position: sticky;
     top: $spacing-8;
@@ -1718,7 +1720,7 @@
     min-width: 0;
   }
 
-  @media (max-width: #{$breakpoint-lg - 1px}) {
+  @media (max-width: #{$breakpoint-md - 1px}) {
     position: static;
     max-height: none;
     order: -1; // Move TOC above content on mobile
@@ -1847,12 +1849,6 @@
   }
 }
 
-// Content blocks for sophisticated layout
-.content-blocks {
-  // Main content area - contains the actual content blocks
-  // No special styling needed as it's just a container
-}
-
 .content-block {
   margin-bottom: $spacing-8;
   padding: $spacing-6;
@@ -1970,12 +1966,12 @@
   // Width is now controlled by grid layout with minmax constraints
   width: 100%;
 
-  @media (min-width: $breakpoint-lg) {
+  @media (min-width: $breakpoint-md) {
     // Ensure sidebar respects grid constraints
     min-width: 0;
   }
 
-  @media (max-width: #{$breakpoint-lg - 1px}) {
+  @media (max-width: #{$breakpoint-md - 1px}) {
     order: -1; // Move sidebar above content on mobile
     margin-bottom: $spacing-8;
     width: 100%;
