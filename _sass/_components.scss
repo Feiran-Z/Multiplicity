@@ -1593,6 +1593,8 @@
     // Explicitly place grid items in their columns
     .content-toc {
       grid-column: 1;
+      // Ensure TOC respects grid constraints
+      min-width: 0;
     }
 
     .main-content {
@@ -1604,6 +1606,8 @@
 
     .sidebar {
       grid-column: 3;
+      // Ensure sidebar respects grid constraints
+      min-width: 0;
     }
   }
 }

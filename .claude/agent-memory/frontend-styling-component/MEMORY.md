@@ -57,9 +57,10 @@
 ## TOC & Sidebar Width Fixes
 - **Implemented**: Min/max width constraints (250-350px) for `.content-toc` and `.sidebar`
 - **Grid Updates**: Changed from fixed 1:3:1 ratios to flexible `minmax()` grid templates
-- **Container Flexibility**: Added `.container-flexible` class with wider max-width (1400-1600px)
+- **Container Flexibility**: Added `.container-flexible` and `.container-sophisticated` classes with wider max-width (1400-1600px)
+- **Critical Fix**: Added `min-width: 0` to grid children (content-toc, main-content, sidebar) to respect CSS Grid constraints
 - **Mobile Override**: Constraints removed on mobile for better stacking
-- **Files Modified**: `_components.scss` (TOC, sidebar, grid layouts), `_base.scss` (container)
+- **Files Modified**: `_components.scss` (TOC, sidebar, grid layouts), `_base.scss` (container), `sophisticated-layout.html` (container class)
 
 ## TOC Layout Fix (1:3:1 Ratio Issue)
 - **Problem**: TOC/sidebar wrapping due to content-grid-cards expanding middle column
@@ -69,3 +70,4 @@
 - **Text Overflow**: Added `overflow-wrap: break-word` and `hyphens: auto` to content-grid-card
 - **Files Modified**: `_components.scss` (layout-grid, content-grid, content-grid-card), `_base.scss` (container-grid-layout)
 - [TOC layout analysis and fix](toc-layout-analysis.md) - Complete analysis of HTML structure and CSS fixes
+- [TOC layout fix summary](toc-layout-fix-summary.md) - Summary of latest fixes for sophisticated layout
