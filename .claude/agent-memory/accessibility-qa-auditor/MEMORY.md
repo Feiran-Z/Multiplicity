@@ -4,9 +4,10 @@
 
 ### 3-Column Layout Implementation
 - Sophisticated layout uses CSS Grid with 1:3:1 ratio (TOC:Content:Sidebar)
-- Desktop: `grid-template-columns: minmax(250px, 350px) minmax(0, 1fr) minmax(250px, 350px)`
-- Mobile: Single column with stacking order: sidebar → TOC → content
-- TOC is sticky with `max-height: calc(100vh - $spacing-16)` and `overflow-y: auto`
+- Desktop (≥768px): `grid-template-columns: minmax(200px, 320px) minmax(0, 1fr) minmax(200px, 320px)`
+- Mobile (<768px): Single column with stacking order: TOC (order: -2) → Sidebar (order: -1) → Content
+- TOC is sticky with `max-height: calc(100vh - $spacing-16)` and `overflow-y: auto` on desktop only
+- Breakpoint documentation mismatch: Docs say 1024px, actual code uses 768px
 
 ### Color Palette Accessibility
 - Primary: #880112 (deep burgundy) - WCAG AA compliant with white text (contrast ratio: 8.59:1)
@@ -37,7 +38,7 @@
 1. **Static analysis**: Review CSS Grid implementation and responsive behavior
 2. **Keyboard testing**: Tab through all three columns in correct order
 3. **Screen reader testing**: Verify announcement order matches visual layout
-4. **Responsive testing**: Test at 1023px, 1024px, and 1025px for smooth transitions
+4. **Responsive testing**: Test at 767px, 768px, and 769px for smooth transitions (actual breakpoint)
 5. **Browser compatibility**: Test CSS Grid rendering across Chrome, Firefox, Safari, Edge
 6. **Performance testing**: Check CSS Grid efficiency and rendering performance
 
@@ -46,6 +47,8 @@
 2. **Component consistency**: .content-card, .content-card-title, etc. properly defined
 3. **Inline styles removed**: All styling now in Sass partials
 4. **Variable usage**: Consistent use of Sass color and spacing variables
+5. **Grid layout improvements**: Fixed 3-column layout with proper minmax constraints
+6. **Mobile stacking order**: TOC appears first on mobile (order: -2), then sidebar (order: -1)
 
 ### Performance Considerations for Grid Layout
 1. **CSS Grid efficiency**: Well-structured grid with minmax constraints
@@ -74,6 +77,8 @@
 - Example pages using sophisticated layout: about.md, courses.md, resources.md, contact.md
 - Layout activated by `layout_style: 'sophisticated'` in frontmatter
 - TOC generation via `toc.html` include
+- TOC toggle button has `aria-label="Toggle table of contents"` but missing `aria-expanded` state
+- Sidebar has `role="complementary"` and `aria-label="Sidebar"`
 
 ### Areas for Improvement in 3-Column Layout
 1. **ARIA landmarks**: Consider adding role="complementary" to sidebar

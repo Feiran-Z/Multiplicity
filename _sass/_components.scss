@@ -319,6 +319,7 @@
 .site-header {
   background-color: $color-surface;
   box-shadow: $shadow-sm;
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: $z-index-sticky;
@@ -1641,8 +1642,12 @@
   margin-bottom: $spacing-4;
   line-height: $line-height-tight;
 
-  @media (max-width: $breakpoint-sm) {
+  @media (max-width: $breakpoint-md) {
     font-size: $font-size-4xl;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    font-size: $font-size-3xl;
   }
 }
 
@@ -1702,6 +1707,7 @@
   border: 1px solid $color-gray-200;
   padding: $spacing-6;
   margin-bottom: $spacing-8;
+  position: -webkit-sticky;
   position: sticky;
   top: $spacing-8;
   max-height: calc(100vh - $spacing-16);
@@ -1711,6 +1717,7 @@
 
   @media (min-width: $breakpoint-md) {
     // In the 1:3:1 layout, TOC is in the left grid column with minmax constraints
+    position: -webkit-sticky;
     position: sticky;
     top: $spacing-8;
     max-height: calc(100vh - $spacing-16);
@@ -1723,7 +1730,8 @@
   @media (max-width: #{$breakpoint-md - 1px}) {
     position: static;
     max-height: none;
-    order: -1; // Move TOC above content on mobile
+    // Order is handled by the main responsive utilities above
+    // This ensures consistent stacking across all mobile views
     width: 100%;
     float: none;
     margin-right: 0;
@@ -1850,10 +1858,8 @@
 }
 
 .content-block {
-  margin-bottom: $spacing-8;
-  padding: $spacing-6;
-  background-color: $color-surface;
-  border-radius: $border-radius-lg;
+  @extend .card;
+  // Override specific styles for content blocks
   border: 1px solid $color-gray-200;
   box-shadow: $shadow-sm;
   transition: all $transition-normal $transition-timing;
@@ -1861,10 +1867,6 @@
   &:hover {
     box-shadow: $shadow-md;
     border-color: $color-primary;
-  }
-
-  &:last-child {
-    margin-bottom: 0;
   }
 
   @media (max-width: $breakpoint-sm) {
@@ -1900,65 +1902,30 @@
 }
 
 // Content navigation (for sophisticated layout pages)
+// Uses same styles as .post-navigation for consistency
 .content-navigation {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: $spacing-8;
-
-  @media (max-width: $breakpoint-sm) {
-    grid-template-columns: 1fr;
-    gap: $spacing-4;
-  }
+  @extend .post-navigation;
 }
 
 .content-nav-prev,
 .content-nav-next {
-  display: flex;
-  flex-direction: column;
-  padding: $spacing-6;
-  border-radius: $border-radius-lg;
-  background-color: $color-surface;
-  border: 1px solid $color-gray-200;
-  text-decoration: none;
-  transition: all $transition-normal $transition-timing;
-
-  &:hover {
-    border-color: $color-primary;
-    box-shadow: $shadow-md;
-    transform: translateY(-2px);
-  }
+  @extend .post-nav-prev, .post-nav-next;
 }
 
 .content-nav-prev {
-  grid-column: 1;
-  text-align: left;
+  @extend .post-nav-prev;
 }
 
 .content-nav-next {
-  grid-column: 2;
-  text-align: right;
-
-  @media (max-width: $breakpoint-sm) {
-    grid-column: 1;
-  }
+  @extend .post-nav-next;
 }
 
 .content-nav-direction {
-  font-family: $font-primary;
-  font-size: $font-size-sm;
-  font-weight: $font-weight-medium;
-  color: $color-primary;
-  margin-bottom: $spacing-2;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  @extend .post-nav-direction;
 }
 
 .content-nav-title {
-  font-family: $font-primary;
-  font-size: $font-size-lg;
-  font-weight: $font-weight-semibold;
-  color: $color-text-primary;
-  line-height: $line-height-normal;
+  @extend .post-nav-title;
 }
 
 // Sidebar components for sophisticated layout
@@ -1972,7 +1939,8 @@
   }
 
   @media (max-width: #{$breakpoint-md - 1px}) {
-    order: -1; // Move sidebar above content on mobile
+    // Order is handled by the main responsive utilities above
+    // This ensures consistent stacking across all mobile views
     margin-bottom: $spacing-8;
     width: 100%;
   }
@@ -2163,27 +2131,23 @@
   }
 }
 
-// Responsive utilities for sophisticated layout
-@media (max-width: #{$breakpoint-lg - 1px}) {
-  .content-sections {
-    display: flex;
-    flex-direction: column;
-  }
-
+// Mobile stacking for screens below the 3-column layout breakpoint
+// Note: The 3-column layout activates at $breakpoint-md (768px)
+// This media query handles the transition between mobile and tablet/desktop
+@media (max-width: #{$breakpoint-md - 1px}) {
   .content-toc {
-    order: -1;
+    order: -2; // TOC appears first
     margin-bottom: $spacing-6;
   }
 
   .sidebar {
-    order: -2;
+    order: -1; // Sidebar appears second, before content
     margin-bottom: $spacing-8;
   }
 }
 
 // Note: Grid column placement is now handled within .layout-grid media query
-// These duplicate rules are no longer needed as they're already defined
-// within the .layout-grid @media (min-width: $breakpoint-lg) block
+// The 3-column layout activates at $breakpoint-md (768px) for better tablet support
 
 @media (max-width: $breakpoint-sm) {
   .sophisticated-layout {
@@ -2196,7 +2160,7 @@
   }
 
   .content-title {
-    font-size: $font-size-4xl;
+    // Responsive sizing handled in main .content-title definition
   }
 
   .content-subtitle {
@@ -2217,5 +2181,78 @@
 
   .sidebar-title {
     font-size: $font-size-lg;
+  }
+}
+
+// Print styles for sophisticated layout
+@media print {
+  .sophisticated-layout {
+    .layout-grid {
+      display: block !important;
+      gap: 0 !important;
+    }
+
+    .content-toc,
+    .sidebar,
+    .main-content {
+      width: 100% !important;
+      max-width: 100% !important;
+      float: none !important;
+      margin: 0 0 2rem 0 !important;
+      page-break-inside: avoid;
+    }
+
+    .content-toc {
+      position: static !important;
+      max-height: none !important;
+      overflow: visible !important;
+      border: 1px solid #ccc !important;
+      background: #fff !important;
+
+      .toc-toggle {
+        display: none !important;
+      }
+
+      .toc-nav {
+        display: block !important;
+      }
+    }
+
+    .sidebar {
+      border: 1px solid #ccc !important;
+      background: #fff !important;
+
+      .sidebar-section {
+        page-break-inside: avoid;
+      }
+    }
+
+    // Hide interactive elements in print
+    button,
+    .toc-toggle,
+    .menu-toggle,
+    .sidebar-toggle-icon {
+      display: none !important;
+    }
+
+    // Ensure links are readable in print
+    a {
+      color: #000 !important;
+      text-decoration: underline !important;
+    }
+
+    // Remove backgrounds for better print contrast
+    .content-block,
+    .card {
+      background: #fff !important;
+      border: 1px solid #ccc !important;
+      box-shadow: none !important;
+    }
+
+    // Adjust spacing for print
+    .content-block {
+      margin-bottom: 1.5rem !important;
+      padding: 1rem !important;
+    }
   }
 }
