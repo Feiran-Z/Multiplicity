@@ -55,11 +55,17 @@
 - **Responsive Design**: Mobile layouts remove constraints and stack components vertically
 
 ## TOC & Sidebar Width Fixes
-- **Implemented**: Min/max width constraints (280-350px) for `.content-toc` and `.sidebar`
-- **Grid Updates**: Changed from fixed 3:1 ratios to flexible `minmax()` grid templates
+- **Implemented**: Min/max width constraints (250-350px) for `.content-toc` and `.sidebar`
+- **Grid Updates**: Changed from fixed 1:3:1 ratios to flexible `minmax()` grid templates
 - **Container Flexibility**: Added `.container-flexible` class with wider max-width (1400-1600px)
 - **Mobile Override**: Constraints removed on mobile for better stacking
 - **Files Modified**: `_components.scss` (TOC, sidebar, grid layouts), `_base.scss` (container)
 
-## Layout Ratio Fixes
-- [TOC:main content:sidebar layout fixes](layout-fixes.md) - Fixed layout ratio issues by removing minimum width constraints and implementing proper 1:3:1 ratio with CSS Grid fr units
+## TOC Layout Fix (1:3:1 Ratio Issue)
+- **Problem**: TOC/sidebar wrapping due to content-grid-cards expanding middle column
+- **Solution**: CSS Grid with `minmax()` constraints: `minmax(250px, 350px) minmax(0, 1fr) minmax(250px, 350px)`
+- **Critical Fix**: Added `min-width: 0` to grid children (main-content, content-toc, sidebar)
+- **Content Grid**: Updated to `repeat(auto-fit, minmax(300px, 1fr))` for responsive cards
+- **Text Overflow**: Added `overflow-wrap: break-word` and `hyphens: auto` to content-grid-card
+- **Files Modified**: `_components.scss` (layout-grid, content-grid, content-grid-card), `_base.scss` (container-grid-layout)
+- [TOC layout analysis and fix](toc-layout-analysis.md) - Complete analysis of HTML structure and CSS fixes
