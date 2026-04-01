@@ -61,7 +61,7 @@
         <aside class="content-toc">
           <div class="toc-header">
             <h3 class="toc-title">Contents</h3>
-            <button class="toc-toggle" aria-label="Toggle table of contents" aria-expanded="true">
+            <button class="toc-toggle" aria-label="Toggle table of contents">
               <span class="toc-toggle-icon"></span>
             </button>
           </div>
@@ -72,7 +72,7 @@
       {% endif %}
 
       <!-- Sidebar -->
-      <aside class="sidebar">
+      <aside class="sidebar" role="complementary" aria-label="Sidebar">
         <!-- Recent posts -->
         {% if site.posts.size > 0 %}
           <div class="sidebar-section">

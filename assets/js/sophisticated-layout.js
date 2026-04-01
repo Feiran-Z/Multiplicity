@@ -9,14 +9,14 @@ document.addEventListener('DOMContentLoaded', function() {
   const tocNav = document.querySelector('.toc-nav');
 
   if (tocToggle && tocNav) {
+    // Initialize state - TOC is visible by default
+    tocToggle.setAttribute('aria-expanded', 'true');
+
     tocToggle.addEventListener('click', function() {
       const isExpanded = this.getAttribute('aria-expanded') === 'true';
       this.setAttribute('aria-expanded', !isExpanded);
       tocNav.style.display = isExpanded ? 'none' : 'block';
     });
-
-    // Initialize state
-    tocToggle.setAttribute('aria-expanded', 'true');
   }
 
   // Smooth scrolling for anchor links in TOC

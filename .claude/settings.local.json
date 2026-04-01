@@ -4,7 +4,8 @@
       "Bash(bundle install:*)",
       "Bash(bundle exec:*)",
       "Bash(xcode-select:*)",
-      "Bash(brew install:*)"
+      "Bash(brew install:*)",
+      "Bash(curl -s http://localhost:4000/Multiplicity/about/)"
     ]
   }
 }

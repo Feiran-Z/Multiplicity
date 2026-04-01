@@ -1,6 +1,7 @@
 ---
 layout: page
 layout_style: 'sophisticated'
+toc: false
 title: "Blog"
 description: "Research paper summaries, methodological insights, and updates on causal inference developments."
 ---

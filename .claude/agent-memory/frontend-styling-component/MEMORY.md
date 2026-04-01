@@ -71,3 +71,11 @@
 - **Files Modified**: `_components.scss` (layout-grid, content-grid, content-grid-card), `_base.scss` (container-grid-layout)
 - [TOC layout analysis and fix](toc-layout-analysis.md) - Complete analysis of HTML structure and CSS fixes
 - [TOC layout fix summary](toc-layout-fix-summary.md) - Summary of latest fixes for sophisticated layout
+
+## Sophisticated 3-Column Layout Analysis
+- **Already Implemented**: Sophisticated 3-column layout with 1:3:1 ratio is fully functional
+- **Grid Configuration**: Uses `minmax(250px, 350px) minmax(0, 1fr) minmax(250px, 350px)` for flexible constraints
+- **Documentation Added**: Created `_sass/_sophisticated-layout-docs.scss` with comprehensive usage guide
+- **Component Clarification**: Enhanced comments distinguishing basic vs sophisticated layout components
+- **Pages Using Layout**: about, courses, resources, blog, contact, instrumental-variables, and blog posts
+- [Sophisticated 3-column layout analysis](sophisticated-3-column-layout-analysis.md) - Complete analysis of existing implementation

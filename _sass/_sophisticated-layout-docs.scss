@@ -1,0 +1,203 @@
+// Sophisticated Layout Documentation
+// ===================================
+// This file documents the sophisticated 3-column layout system used by pages
+// with `layout_style: 'sophisticated'` in their frontmatter.
+
+// OVERVIEW
+// --------
+// The sophisticated layout implements a responsive 3-column design with:
+// - Table of Contents (TOC) column: width ratio 1 (250-350px)
+// - Main content column: width ratio 3 (flexible)
+// - Sidebar column: width ratio 1 (250-350px)
+//
+// On mobile (< 1024px), the layout stacks vertically with TOC and sidebar
+// appearing above the main content.
+
+// USAGE
+// -----
+// To use the sophisticated layout on any page or post:
+//
+// 1. Add to frontmatter:
+//    ---
+//    layout: page (or post)
+//    layout_style: 'sophisticated'
+//    ---
+//
+// 2. Optional TOC control:
+//    toc: false  # Disables table of contents
+//
+// 3. Use content structure:
+//    <div class="content-block">
+//      <h2 class="content-block-title">Section Title</h2>
+//      <div class="content-block-content">
+//        Your content here
+//      </div>
+//    </div>
+
+// LAYOUT STRUCTURE
+// ----------------
+// The sophisticated layout uses CSS Grid with the following structure:
+//
+// .sophisticated-layout
+//   .container.container-sophisticated
+//     .layout-grid
+//       .main-content (grid column 2)
+//         .content-header
+//         .content-sections
+//           .content-blocks
+//             .content-block (repeatable)
+//         .content-footer
+//           .content-navigation
+//       .content-toc (grid column 1, optional)
+//       .sidebar (grid column 3)
+
+// GRID CONFIGURATION
+// ------------------
+// Desktop (≥ 1024px):
+//   grid-template-columns: minmax(250px, 350px) minmax(0, 1fr) minmax(250px, 350px);
+//   gap: 3rem;
+//
+// Mobile (< 1024px):
+//   grid-template-columns: 1fr;
+//   gap: 2rem;
+//   TOC and sidebar stack above content with order: -1
+
+// COMPONENT CLASSES
+// -----------------
+
+// Layout Grid
+// -----------
+// .layout-grid - Main grid container with 1:3:1 ratio on desktop
+// .main-content - Middle column (3fr ratio), contains primary content
+// .content-toc - Left column (1fr ratio), contains table of contents
+// .sidebar - Right column (1fr ratio), contains sidebar content
+
+// Content Structure
+// -----------------
+// .content-header - Page header with title, subtitle, metadata
+// .content-title - Main page title (h1)
+// .content-subtitle - Page subtitle
+// .content-meta - Date, author, tags metadata
+// .content-sections - Container for content blocks
+// .content-blocks - Wrapper for individual content blocks
+// .content-block - Individual content section with card styling
+// .content-block-title - Title for content block (h2, h3, etc.)
+// .content-block-content - Content within a block
+// .content-footer - Footer with navigation
+// .content-navigation - Previous/next navigation grid
+// .content-nav-prev/.content-nav-next - Navigation links
+
+// Table of Contents
+// -----------------
+// .content-toc - Sticky TOC container
+// .toc-header - TOC header with title and toggle button
+// .toc-title - "Contents" heading
+// .toc-toggle - Collapse/expand button
+// .toc-nav - Navigation container
+// .toc-list - Generated TOC list (from toc.html include)
+
+// Sidebar
+// -------
+// .sidebar - Sidebar container
+// .sidebar-section - Individual sidebar section
+// .sidebar-title - Section title
+// .sidebar-posts - Recent posts list
+// .sidebar-post-item - Individual post item
+// .sidebar-post-link - Post link with title and date
+// .sidebar-tags - Tags cloud
+// .sidebar-tag - Individual tag link
+// .sidebar-cta - Call-to-action section
+
+// Content Grid (for card-based layouts)
+// -------------------------------------
+// .content-grid - Responsive grid for cards
+// .content-grid-card - Individual card
+// .content-grid-card-header - Card header
+// .content-grid-card-title - Card title
+// .content-grid-card-level - Level badge
+// .content-grid-card-body - Card content
+// .content-grid-card-description - Card description
+// .content-grid-card-footer - Card footer
+// .content-grid-card-icon - Icon in card
+// .content-grid-card-meta - Metadata in card
+
+// RESPONSIVE BEHAVIOR
+// -------------------
+// Breakpoints:
+// - sm: 640px (mobile)
+// - md: 768px (tablet)
+// - lg: 1024px (desktop - 3-column layout activates)
+// - xl: 1280px
+// - 2xl: 1536px
+
+// Mobile (< 1024px):
+// - Single column layout
+// - TOC and sidebar stack above content
+// - Content blocks have reduced padding
+// - Navigation becomes single column
+
+// Desktop (≥ 1024px):
+// - 3-column grid with 1:3:1 ratio
+// - TOC and sidebar have fixed width range (250-350px)
+// - Main content column is flexible
+// - TOC is sticky with scrollable content
+// - Sidebar sections stack vertically
+
+// ACCESSIBILITY FEATURES
+// ----------------------
+// - Minimum touch target sizes (44px)
+// - Proper focus states for all interactive elements
+// - Semantic HTML structure
+// - ARIA labels for navigation
+// - Reduced motion support
+// - WCAG AA color contrast compliance
+
+// INTEGRATION WITH BASIC LAYOUT
+// -----------------------------
+// The project maintains two layout systems:
+//
+// 1. Basic Layout (default):
+//    - Uses .page-header, .page-title, .page-content
+//    - Uses .post-header, .post-title, .post-content
+//    - Single column design
+//    - Used when layout_style is not specified
+//
+// 2. Sophisticated Layout:
+//    - Uses .content-header, .content-title, .content-blocks
+//    - Uses .content-toc and .sidebar
+//    - 3-column grid on desktop
+//    - Activated by layout_style: 'sophisticated'
+
+// CUSTOMIZATION
+// -------------
+// To customize the sophisticated layout:
+//
+// 1. Modify grid ratios in .layout-grid @media (min-width: $breakpoint-lg)
+// 2. Adjust TOC/sidebar widths in minmax() constraints
+// 3. Update colors in _variables.scss
+// 4. Modify spacing using $spacing-* variables
+// 5. Add new sidebar sections in _includes/sophisticated-layout.html
+
+// EXAMPLE PAGE STRUCTURE
+// ----------------------
+// ---
+// layout: page
+// layout_style: 'sophisticated'
+// title: "My Page"
+// subtitle: "A detailed explanation"
+// toc: true
+// ---
+//
+// <div class="content-block">
+//   <h2 class="content-block-title">Introduction</h2>
+//   <div class="content-block-content">
+//     <p>Your content here.</p>
+//   </div>
+// </div>
+//
+// <div class="content-block">
+//   <h2 class="content-block-title">Details</h2>
+//   <div class="content-block-content">
+//     <p>More content here.</p>
+//   </div>
+// </div>

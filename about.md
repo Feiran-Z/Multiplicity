@@ -275,12 +275,12 @@ description: "Learn about the Multiplicity: Roads Not Taken project and its miss
 
       <div class="content-highlight">
         <div class="content-highlight-title">Educational Content License</div>
-        <div class="content-highlight-content">All educational content on this site is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>. This allows sharing and adaptation for non-commercial purposes with proper attribution.</div>
+        <div class="content-highlight-content">All educational content on this site is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer" aria-label="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (opens in new window)">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>. This allows sharing and adaptation for non-commercial purposes with proper attribution.</div>
       </div>
 
       <div class="content-highlight">
         <div class="content-highlight-title">Code License</div>
-        <div class="content-highlight-content">Code examples are provided under the <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer">MIT License</a>, offering maximum flexibility for reuse in both open-source and commercial projects.</div>
+        <div class="content-highlight-content">Code examples are provided under the <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer" aria-label="MIT License (opens in new window)">MIT License</a>, offering maximum flexibility for reuse in both open-source and commercial projects.</div>
       </div>
     </div>
   </div>
