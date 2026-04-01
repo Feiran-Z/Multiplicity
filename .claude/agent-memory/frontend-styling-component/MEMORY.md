@@ -60,3 +60,6 @@
 - **Container Flexibility**: Added `.container-flexible` class with wider max-width (1400-1600px)
 - **Mobile Override**: Constraints removed on mobile for better stacking
 - **Files Modified**: `_components.scss` (TOC, sidebar, grid layouts), `_base.scss` (container)
+
+## Layout Ratio Fixes
+- [TOC:main content:sidebar layout fixes](layout-fixes.md) - Fixed layout ratio issues by removing minimum width constraints and implementing proper 1:3:1 ratio with CSS Grid fr units

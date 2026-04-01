@@ -1580,8 +1580,8 @@
 
   @media (min-width: $breakpoint-lg) {
     // Three-column layout with 1:3:1 ratio (TOC:Content:Sidebar)
-    // Main content gets 3 parts, TOC and sidebar get 1 part each
-    grid-template-columns: minmax(240px, 280px) minmax(0, 3fr) minmax(240px, 280px);
+    // Using fr units for flexible ratio without fixed min/max widths
+    grid-template-columns: 1fr 3fr 1fr;
     gap: $spacing-12;
 
     // Explicitly place grid items in their columns
@@ -1686,9 +1686,7 @@
   top: $spacing-8;
   max-height: calc(100vh - $spacing-16);
   overflow-y: auto;
-  // Width constraints for consistent sizing
-  min-width: 280px;
-  max-width: 350px;
+  // Width is now controlled by grid layout (1fr in 1:3:1 ratio)
   width: 100%;
 
   @media (min-width: $breakpoint-lg) {
@@ -1704,8 +1702,7 @@
     position: static;
     max-height: none;
     order: -1; // Move TOC above content on mobile
-    min-width: auto;
-    max-width: none;
+    width: 100%;
     float: none;
     margin-right: 0;
   }
@@ -1948,16 +1945,13 @@
 
 // Sidebar components
 .sidebar {
-  // Width constraints for consistent sizing
-  min-width: 280px;
-  max-width: 350px;
+  // Width is now controlled by grid layout (1fr in 1:3:1 ratio)
   width: 100%;
 
   @media (max-width: #{$breakpoint-lg - 1px}) {
     order: -1; // Move sidebar above content on mobile
     margin-bottom: $spacing-8;
-    min-width: auto;
-    max-width: none;
+    width: 100%;
   }
 }
 

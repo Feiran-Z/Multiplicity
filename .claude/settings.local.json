@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(bundle install:*)",
-      "Bash(bundle exec:*)"
+      "Bash(bundle exec:*)",
+      "Bash(xcode-select:*)",
+      "Bash(brew install:*)"
     ]
   }
 }
