@@ -1573,6 +1573,7 @@
     min-width: 0;
     // Reduce padding slightly on medium screens to prevent wrapping
     padding: $spacing-5;
+    box-sizing: border-box;
   }
 
   @media (min-width: $breakpoint-lg) {
@@ -1791,6 +1792,7 @@
   @media (min-width: $breakpoint-md) {
     // Ensure sidebar respects grid constraints
     min-width: 0;
+    box-sizing: border-box;
   }
 
   @media (max-width: #{$breakpoint-md - 1px}) {
