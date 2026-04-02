@@ -1549,10 +1549,10 @@
   background-color: $color-surface;
   border-radius: $border-radius-lg;
   border: 1px solid $color-gray-200;
-  //padding: $spacing-6;
+  padding: $spacing-6;
   margin-bottom: $spacing-8;
-  position: -webkit-sticky;
-  position: sticky;
+  //position: -webkit-sticky;
+  //position: sticky;
   top: $spacing-8;
   max-height: calc(100vh - $spacing-16);
   overflow-y: auto;
@@ -1572,13 +1572,13 @@
     // Ensure TOC respects grid constraints
     min-width: 0;
     // Reduce padding slightly on medium screens to prevent wrapping
-    //padding: $spacing-5;
+    padding: $spacing-5;
     box-sizing: border-box;
   }
 
   @media (min-width: $breakpoint-lg) {
     // Restore full padding on larger screens where space is more abundant
-    //padding: $spacing-6;
+    padding: $spacing-6;
   }
 
   @media (max-width: #{$breakpoint-md - 1px}) {
@@ -1589,6 +1589,7 @@
     width: 100%;
     float: none;
     margin-right: 0;
+    box-sizing: border-box;
   }
 }
 
