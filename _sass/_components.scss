@@ -980,9 +980,35 @@
   }
 }
 
-// .about-team-* classes removed - use .content-team-* classes instead
+.content-principle-number {
+  font-family: $font-secondary;
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+  margin-bottom: $spacing-3;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background: rgba($color-primary, 0.1);
+  border-radius: 50%;
+}
 
-// .about-quote and .about-quote-author removed - use .content-quote and .content-quote-author instead
+.content-principle-title {
+  font-family: $font-primary;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-3;
+}
+
+.content-principle-description {
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  line-height: $line-height-normal;
+  color: $color-text-secondary;
+}
 
 // Section title components (used in homepage and other pages)
 .section-title {
@@ -1021,19 +1047,6 @@
   @media (max-width: $breakpoint-sm) {
     padding: $spacing-8 0;
   }
-}
-
-// Content principle components (for about.md and other pages)
-.content-principle-number {
-  @extend .about-principle-number;
-}
-
-.content-principle-title {
-  @extend .about-principle-title;
-}
-
-.content-principle-description {
-  @extend .about-principle-description;
 }
 
 // Post components (for basic layout posts without sophisticated styling)
