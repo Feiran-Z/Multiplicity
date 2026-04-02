@@ -1428,7 +1428,7 @@
     // TOC/Sidebar have $spacing-6 padding (24px) on each side = 48px total
     // Plus 1px border on each side = 2px total
     // So we need to reduce min/max by ~50px to account for internal spacing
-    grid-template-columns: minmax(0, 0.4fr) minmax(0.5fr, 800px) minmax(0, 0.4fr);
+    grid-template-columns: minmax(0, 0.4fr) minmax(600px, 800px) minmax(0, 0.4fr);
     gap: $spacing-10;
 
     // Explicitly place grid items in their columns
