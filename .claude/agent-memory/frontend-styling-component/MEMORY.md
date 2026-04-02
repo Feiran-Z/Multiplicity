@@ -64,18 +64,23 @@
 
 ## TOC Layout Fix (1:3:1 Ratio Issue)
 - **Problem**: TOC/sidebar wrapping due to content-grid-cards expanding middle column
-- **Solution**: CSS Grid with `minmax()` constraints: `minmax(250px, 350px) minmax(0, 1fr) minmax(250px, 350px)`
-- **Critical Fix**: Added `min-width: 0` to grid children (main-content, content-toc, sidebar)
+- **Solution**: CSS Grid with `minmax()` constraints: `minmax(150px, 230px) minmax(0, 1fr) minmax(150px, 230px)` (accounts for 50px padding+borders)
+- **Critical Fix**: Added `min-width: 0` to grid children (main-content, content-toc, sidebar) - overrides intrinsic minimum width
+- **Box-Sizing**: Added `box-sizing: border-box` to all layout components for consistent width calculations
 - **Content Grid**: Updated to `repeat(auto-fit, minmax(300px, 1fr))` for responsive cards
 - **Text Overflow**: Added `overflow-wrap: break-word` and `hyphens: auto` to content-grid-card
-- **Files Modified**: `_components.scss` (layout-grid, content-grid, content-grid-card), `_base.scss` (container-grid-layout)
+- **Responsive Padding**: Reduced padding on medium screens (768px-1023px) to prevent wrapping
+- **Container Enhancements**: Added `.container-sophisticated` with wider max-width (1400-1600px) and reduced padding on medium screens
+- **Files Modified**: `_components.scss` (layout-grid, content-grid, content-grid-card), `_base.scss` (container classes)
 - [TOC layout analysis and fix](toc-layout-analysis.md) - Complete analysis of HTML structure and CSS fixes
 - [TOC layout fix summary](toc-layout-fix-summary.md) - Summary of latest fixes for sophisticated layout
+- [TOC layout fix analysis](toc-layout-fix-analysis.md) - Detailed analysis of CSS fixes and calculations
 
 ## Sophisticated 3-Column Layout Analysis
 - **Already Implemented**: Sophisticated 3-column layout with 1:3:1 ratio is fully functional
-- **Grid Configuration**: Uses `minmax(250px, 350px) minmax(0, 1fr) minmax(250px, 350px)` for flexible constraints
+- **Grid Configuration**: Uses `minmax(150px, 230px) minmax(0, 1fr) minmax(150px, 230px)` for flexible constraints (accounts for padding/borders)
 - **Documentation Added**: Created `_sass/_sophisticated-layout-docs.scss` with comprehensive usage guide
 - **Component Clarification**: Enhanced comments distinguishing basic vs sophisticated layout components
 - **Pages Using Layout**: about, courses, resources, blog, contact, instrumental-variables, and blog posts
 - [Sophisticated 3-column layout analysis](sophisticated-3-column-layout-analysis.md) - Complete analysis of existing implementation
+- [1:3:1 Layout analysis and fixes](1-3-1-layout-analysis.md) - Analysis of wrapping issues and responsive fixes

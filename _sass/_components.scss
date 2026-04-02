@@ -1424,7 +1424,11 @@
     // Three-column layout with 1:3:1 ratio (TOC:Content:Sidebar)
     // Using minmax() to prevent TOC/sidebar from wrapping while maintaining ratio
     // TOC: min 200px, max 280px | Content: flexible | Sidebar: min 200px, max 280px
-    grid-template-columns: minmax(200px, 280px) minmax(0, 1fr) minmax(200px, 280px);
+    // IMPORTANT: Account for padding and borders in minmax constraints
+    // TOC/Sidebar have $spacing-6 padding (24px) on each side = 48px total
+    // Plus 1px border on each side = 2px total
+    // So we need to reduce min/max by ~50px to account for internal spacing
+    grid-template-columns: minmax(150px, 230px) minmax(0, 1fr) minmax(150px, 230px);
     gap: $spacing-10;
 
     // Explicitly place grid items in their columns
@@ -1433,6 +1437,8 @@
       // Ensure TOC respects grid constraints
       min-width: 0;
       overflow-wrap: break-word;
+      // Use box-sizing: border-box to ensure padding is included in width
+      box-sizing: border-box;
     }
 
     .main-content {
@@ -1440,6 +1446,8 @@
       // Ensure content doesn't overflow and respects grid constraints
       min-width: 0;
       overflow-wrap: break-word;
+      // Use box-sizing: border-box to ensure consistent sizing
+      box-sizing: border-box;
     }
 
     .sidebar {
@@ -1447,6 +1455,8 @@
       // Ensure sidebar respects grid constraints
       min-width: 0;
       overflow-wrap: break-word;
+      // Use box-sizing: border-box to ensure padding is included in width
+      box-sizing: border-box;
     }
   }
 }
@@ -1548,6 +1558,8 @@
   overflow-y: auto;
   // Width is now controlled by grid layout with minmax constraints
   width: 100%;
+  // Ensure box-sizing includes padding and border in width calculation
+  box-sizing: border-box;
 
   @media (min-width: $breakpoint-md) {
     // In the 1:3:1 layout, TOC is in the left grid column with minmax constraints
@@ -1559,6 +1571,13 @@
     margin-bottom: 0;
     // Ensure TOC respects grid constraints
     min-width: 0;
+    // Reduce padding slightly on medium screens to prevent wrapping
+    padding: $spacing-5;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    // Restore full padding on larger screens where space is more abundant
+    padding: $spacing-6;
   }
 
   @media (max-width: #{$breakpoint-md - 1px}) {
@@ -1766,6 +1785,8 @@
 .sidebar {
   // Width is now controlled by grid layout with minmax constraints
   width: 100%;
+  // Ensure box-sizing includes padding and border in width calculation
+  box-sizing: border-box;
 
   @media (min-width: $breakpoint-md) {
     // Ensure sidebar respects grid constraints
@@ -1787,9 +1808,16 @@
   padding: $spacing-6;
   margin-bottom: $spacing-6;
   box-shadow: $shadow-sm;
+  // Ensure box-sizing includes padding and border in width calculation
+  box-sizing: border-box;
 
   &:last-child {
     margin-bottom: 0;
+  }
+
+  @media (min-width: $breakpoint-md) and (max-width: #{$breakpoint-lg - 1px}) {
+    // Reduce padding on medium screens to prevent wrapping in 1:3:1 layout
+    padding: $spacing-5;
   }
 
   @media (max-width: $breakpoint-sm) {
