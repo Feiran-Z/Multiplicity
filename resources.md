@@ -55,8 +55,6 @@ description: "References, eBooks, slides, R/Python code, and other resources for
   </div>
 </div>
 
-</div>
-
 <div class="content-block">
   <h2 id="textbooks">Textbooks & eBooks</h2>
 
