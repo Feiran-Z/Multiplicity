@@ -5,7 +5,9 @@
       "Bash(bundle exec:*)",
       "Bash(xcode-select:*)",
       "Bash(brew install:*)",
-      "Bash(curl -s http://localhost:4000/Multiplicity/about/)"
+      "Bash(curl -s http://localhost:4000/Multiplicity/about/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:4000/Multiplicity/)",
+      "Bash(pkill:*)"
     ]
   }
 }

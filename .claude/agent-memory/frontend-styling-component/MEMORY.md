@@ -84,3 +84,11 @@
 - **Pages Using Layout**: about, courses, resources, blog, contact, instrumental-variables, and blog posts
 - [Sophisticated 3-column layout analysis](sophisticated-3-column-layout-analysis.md) - Complete analysis of existing implementation
 - [1:3:1 Layout analysis and fixes](1-3-1-layout-analysis.md) - Analysis of wrapping issues and responsive fixes
+
+## Components SCSS Optimization (2026-04-05)
+- **Redundancy Reduction**: Consolidated duplicate title, meta, and tags styles across page types
+- **Shared Selectors**: Combined `.page-title`, `.post-title`, `.content-title` and `.post-meta`, `.content-meta`
+- **Card Extensions**: Used `@extend .card` for `.content-grid-card` and `.content-team-card`
+- **3-Column Layout Fix**: Updated grid to `minmax(150px, 230px) minmax(600px, 800px) minmax(150px, 230px)` for better tablet support
+- **Code Reduction**: Removed ~50+ lines of duplicate CSS while maintaining design system integrity
+- [Components SCSS optimization summary](components-optimization-summary.md) - Detailed summary of optimizations made

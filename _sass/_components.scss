@@ -702,12 +702,28 @@
   }
 }
 
-.page-title {
+// Shared title styles for page, post, and content titles
+.page-title,
+.post-title,
+.content-title {
   font-family: $font-secondary;
   font-size: $font-size-5xl;
   font-weight: $font-weight-bold;
   color: $color-text-primary;
   margin-bottom: $spacing-4;
+  line-height: $line-height-tight;
+
+  @media (max-width: $breakpoint-md) {
+    font-size: $font-size-4xl;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    font-size: $font-size-3xl;
+  }
+}
+
+// Page title specific decoration
+.page-title {
   position: relative;
   display: inline-block;
 
@@ -776,12 +792,9 @@
 }
 
 .content-grid-card {
-  background: $color-surface;
-  border-radius: $border-radius-lg;
-  padding: $spacing-6;
+  @extend .card;
   border: 2px solid $color-gray-200;
   transition: all $transition-normal $transition-timing;
-  // Ensure cards don't overflow their containers
   overflow-wrap: break-word;
   word-wrap: break-word;
   hyphens: auto;
@@ -799,11 +812,7 @@
 }
 
 .content-grid-card-title {
-  font-family: $font-primary;
-  font-size: $font-size-xl;
-  font-weight: $font-weight-semibold;
-  color: $color-text-primary;
-  margin-bottom: $spacing-2;
+  @extend .card-title;
 }
 
 .content-grid-card-level {
@@ -848,26 +857,17 @@
 }
 
 .content-team-card {
-  background: $color-surface;
-  border-radius: $border-radius-xl;
-  box-shadow: $shadow-md;
-  padding: $spacing-6;
+  @extend .card;
   text-align: center;
   border: 1px solid $color-gray-200;
-  transition: all $transition-normal $transition-timing;
 
   &:hover {
-    box-shadow: $shadow-lg;
     border-color: $color-primary;
   }
 }
 
 .content-team-name {
-  font-family: $font-secondary;
-  font-size: $font-size-xl;
-  font-weight: $font-weight-semibold;
-  color: $color-text-primary;
-  margin-bottom: $spacing-2;
+  @extend .card-title;
 }
 
 .content-team-role {
@@ -1067,20 +1067,11 @@
   margin: 0 auto;
 }
 
-.post-title {
-  font-family: $font-secondary;
-  font-size: $font-size-5xl;
-  font-weight: $font-weight-bold;
-  color: $color-text-primary;
-  margin-bottom: $spacing-4;
-  line-height: $line-height-tight;
+// Post title now uses shared .page-title, .post-title, .content-title styles above
 
-  @media (max-width: $breakpoint-sm) {
-    font-size: $font-size-4xl;
-  }
-}
-
-.post-meta {
+// Shared meta information styles for posts and content
+.post-meta,
+.content-meta {
   font-family: $font-primary;
   font-size: $font-size-base;
   color: $color-text-secondary;
@@ -1088,24 +1079,36 @@
   flex-wrap: wrap;
   align-items: center;
   gap: $spacing-3;
+}
+
+.post-meta {
   margin-bottom: $spacing-6;
 }
 
-.post-date {
+.content-meta {
+  margin-bottom: $spacing-4;
+}
+
+.post-date,
+.content-date {
   font-weight: $font-weight-medium;
   color: $color-primary;
 }
 
-.post-author-separator {
+.post-author-separator,
+.content-author-separator {
   color: $color-gray-400;
 }
 
-.post-author {
+.post-author,
+.content-author {
   font-weight: $font-weight-medium;
   color: $color-text-primary;
 }
 
-.post-tags {
+// Shared tags styles for posts and content
+.post-tags,
+.content-tags {
   display: flex;
   flex-wrap: wrap;
   gap: $spacing-2;
@@ -1418,44 +1421,31 @@
   gap: $spacing-8;
   grid-template-columns: 1fr;
 
-  // Activate 3-column layout earlier than 1024px so TOC/sidebar
-  // don't drop below content on common tablet/smaller-laptop widths.
+  // Activate 3-column layout at 768px for better tablet support
   @media (min-width: $breakpoint-md) {
     // Three-column layout with 1:3:1 ratio (TOC:Content:Sidebar)
-    // Using minmax() to prevent TOC/sidebar from wrapping while maintaining ratio
-    // TOC: min 230px, max 280px | Content: flexible | Sidebar: min 230px, max 280px
-    // IMPORTANT: Account for padding and borders in minmax constraints
-    // TOC/Sidebar have $spacing-6 padding (24px) on each side = 48px total
-    // Plus 1px border on each side = 2px total
-    // So we need to reduce min/max by ~50px to account for internal spacing
-    grid-template-columns: minmax(100px, 0.5fr) minmax(600px, 800px) minmax(100px, 0.5fr);
+    // Using minmax() with flexible constraints for better responsiveness
+    // TOC/Sidebar: min 150px, max 230px (accounts for padding/borders)
+    // Content: flexible with min 600px, max 800px for optimal reading width
+    grid-template-columns: minmax(150px, 230px) minmax(600px, 800px) minmax(150px, 230px);
     gap: $spacing-10;
 
     // Explicitly place grid items in their columns
     .content-toc {
       grid-column: 1;
-      // Ensure TOC respects grid constraints
-      min-width: 0;
-      overflow-wrap: break-word;
-      // Use box-sizing: border-box to ensure padding is included in width
+      min-width: 0; // Critical for respecting grid constraints
       box-sizing: border-box;
     }
 
     .main-content {
       grid-column: 2;
-      // Ensure content doesn't overflow and respects grid constraints
-      min-width: 0;
-      overflow-wrap: break-word;
-      // Use box-sizing: border-box to ensure consistent sizing
+      min-width: 0; // Critical for respecting grid constraints
       box-sizing: border-box;
     }
 
     .sidebar {
       grid-column: 3;
-      // Ensure sidebar respects grid constraints
-      min-width: 0;
-      overflow-wrap: break-word;
-      // Use box-sizing: border-box to ensure padding is included in width
+      min-width: 0; // Critical for respecting grid constraints
       box-sizing: border-box;
     }
   }
@@ -1478,22 +1468,7 @@
   }
 }
 
-.content-title {
-  font-family: $font-secondary;
-  font-size: $font-size-5xl;
-  font-weight: $font-weight-bold;
-  color: $color-text-primary;
-  margin-bottom: $spacing-4;
-  line-height: $line-height-tight;
-
-  @media (max-width: $breakpoint-md) {
-    font-size: $font-size-4xl;
-  }
-
-  @media (max-width: $breakpoint-sm) {
-    font-size: $font-size-3xl;
-  }
-}
+// Content title now uses shared .page-title, .post-title, .content-title styles above
 
 .content-subtitle {
   font-family: $font-primary;
@@ -1504,37 +1479,8 @@
   margin-bottom: $spacing-6;
 }
 
-.content-meta {
-  font-family: $font-primary;
-  font-size: $font-size-base;
-  color: $color-text-secondary;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: $spacing-3;
-  margin-bottom: $spacing-4;
-}
-
-.content-date {
-  font-weight: $font-weight-medium;
-  color: $color-primary;
-}
-
-.content-author-separator {
-  color: $color-gray-400;
-}
-
-.content-author {
-  font-weight: $font-weight-medium;
-  color: $color-text-primary;
-}
-
-.content-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: $spacing-2;
-  margin-top: $spacing-4;
-}
+// Content meta now uses shared .post-meta, .content-meta styles above
+// Content tags now uses shared .post-tags, .content-tags styles above
 
 .content-sections {
   // This is now a flex container for the content blocks within the main content area
@@ -1551,45 +1497,30 @@
   border: 1px solid $color-gray-200;
   padding: $spacing-6;
   margin-bottom: $spacing-8;
-  //position: -webkit-sticky;
-  //position: sticky;
-  top: $spacing-8;
-  max-height: calc(100vh - $spacing-16);
-  overflow-y: auto;
-  // Width is now controlled by grid layout with minmax constraints
   width: 100%;
-  // Ensure box-sizing includes padding and border in width calculation
   box-sizing: border-box;
 
   @media (min-width: $breakpoint-md) {
-    // In the 1:3:1 layout, TOC is in the left grid column with minmax constraints
     position: -webkit-sticky;
     position: sticky;
     top: $spacing-8;
     max-height: calc(100vh - $spacing-16);
     overflow-y: auto;
     margin-bottom: 0;
-    // Ensure TOC respects grid constraints
     min-width: 0;
-    // Reduce padding slightly on medium screens to prevent wrapping
-    padding: $spacing-5;
-    box-sizing: border-box;
+    padding: $spacing-5; // Reduced padding for medium screens
   }
 
   @media (min-width: $breakpoint-lg) {
-    // Restore full padding on larger screens where space is more abundant
-    padding: $spacing-6;
+    padding: $spacing-6; // Restore full padding on larger screens
   }
 
   @media (max-width: #{$breakpoint-md - 1px}) {
     position: static;
     max-height: none;
-    // Order is handled by the main responsive utilities above
-    // This ensures consistent stacking across all mobile views
     width: 100%;
     float: none;
     margin-right: 0;
-    box-sizing: border-box;
   }
 }
 
@@ -1785,20 +1716,14 @@
 
 // Sidebar components for sophisticated layout
 .sidebar {
-  // Width is now controlled by grid layout with minmax constraints
   width: 100%;
-  // Ensure box-sizing includes padding and border in width calculation
   box-sizing: border-box;
 
   @media (min-width: $breakpoint-md) {
-    // Ensure sidebar respects grid constraints
     min-width: 0;
-    box-sizing: border-box;
   }
 
   @media (max-width: #{$breakpoint-md - 1px}) {
-    // Order is handled by the main responsive utilities above
-    // This ensures consistent stacking across all mobile views
     margin-bottom: $spacing-8;
     width: 100%;
   }
@@ -1811,7 +1736,6 @@
   padding: $spacing-6;
   margin-bottom: $spacing-6;
   box-shadow: $shadow-sm;
-  // Ensure box-sizing includes padding and border in width calculation
   box-sizing: border-box;
 
   &:last-child {
@@ -1819,8 +1743,7 @@
   }
 
   @media (min-width: $breakpoint-md) and (max-width: #{$breakpoint-lg - 1px}) {
-    // Reduce padding on medium screens to prevent wrapping in 1:3:1 layout
-    padding: $spacing-5;
+    padding: $spacing-5; // Reduced padding for medium screens
   }
 
   @media (max-width: $breakpoint-sm) {
@@ -2024,9 +1947,7 @@
     padding-bottom: $spacing-4;
   }
 
-  .content-title {
-    // Responsive sizing handled in main .content-title definition
-  }
+  // Content title responsive sizing handled in shared .page-title, .post-title, .content-title styles
 
   .content-subtitle {
     font-size: $font-size-lg;
