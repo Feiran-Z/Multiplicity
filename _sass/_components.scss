@@ -1427,7 +1427,7 @@
     // Using minmax() with flexible constraints for better responsiveness
     // TOC/Sidebar: min 150px, max 230px (accounts for padding/borders)
     // Content: flexible with min 600px, max 800px for optimal reading width
-    grid-template-columns: minmax(150px, 230px) minmax(600px, 800px) minmax(150px, 230px);
+    grid-template-columns: minmax(80px, 230px) minmax(600px, 1fr) minmax(80px, 230px);
     gap: $spacing-10;
 
     // Explicitly place grid items in their columns
