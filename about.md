@@ -11,7 +11,7 @@ description: "Learn about the Multiplicity: Roads Not Taken project and its miss
   <div class="content-card">
     <h2 class="content-card-title">Our Vision</h2>
     <div class="content-card-content">
-      <p><strong>Multiplicity: Roads Not Taken</strong> is an educational initiative dedicated to exploring the fundamental questions of and current developments in causal inference. Our name draws inspiration from Robert Frost's poem, which captures the human curiosity about alternative paths—the "what ifs" that shape both personal journeys and scientific inquiry.</p>
+      <p><strong>Multiplicity: Roads Not Taken</strong> is an educational initiative dedicated to exploring the fundamental questions of and current developments in causal inference with a diverse audience. Our name draws inspiration from Robert Frost's poem, which captures the human curiosity about alternative paths — the "what ifs" that shape both personal journeys and scientific inquiry.</p>
 
       <div class="content-highlight">
         <div class="content-highlight-title">The Core Question</div>
@@ -59,24 +59,6 @@ description: "Learn about the Multiplicity: Roads Not Taken project and its miss
 </div>
 
 <div class="content-block">
-  <h2 class="content-block-title">The Rubin Causal Model</h2>
-
-  <div class="content-card">
-    <h2 class="content-card-title">Potential Outcomes Framework</h2>
-    <div class="content-card-content">
-      <p>At the heart of our approach is Donald Rubin's potential outcomes framework, which formalizes the idea that for each unit (person, school, country) and each treatment, there exists a set of potential outcomes—one for each possible treatment level.</p>
-
-      <div class="content-highlight">
-        <div class="content-highlight-title">The Fundamental Problem of Causal Inference</div>
-        <div class="content-highlight-content">We observe only one of these potential outcomes for each unit. The counterfactual—what would have happened under alternative conditions—remains unobserved but is essential for causal reasoning.</div>
-      </div>
-
-      <p>This framework provides the mathematical language to ask: <em>What would have happened if things had been different?</em> It reminds us that every observed outcome is just one realization among many possible worlds.</p>
-    </div>
-  </div>
-</div>
-
-<div class="content-block">
   <h2 class="content-block-title">Educational Philosophy</h2>
 
   <div class="content-card">
@@ -114,24 +96,6 @@ description: "Learn about the Multiplicity: Roads Not Taken project and its miss
 </div>
 
 <div class="content-block">
-  <h2 class="content-block-title">Project Origins</h2>
-
-  <div class="content-card">
-    <h2 class="content-card-title">A Personal Fork in the Road</h2>
-    <div class="content-card-content">
-      <p>This project emerged from a personal academic journey. After six years in a Ph.D. program in international and development economics, I faced a fork in the road: continue on the expected academic path or explore alternative directions.</p>
-
-      <div class="content-highlight">
-        <div class="content-highlight-title">The Turning Point</div>
-        <div class="content-highlight-content">Choosing the latter sparked a deep reflection on counterfactuals—not just in research, but in life. What paths were available? What factors influenced the decision? What might have been different?</div>
-      </div>
-
-      <p>That experience crystallized into a commitment to help others navigate their own causal questions, whether in formal research settings or in understanding the world around them.</p>
-    </div>
-  </div>
-</div>
-
-<div class="content-block">
   <h2 class="content-block-title">Content Approach</h2>
 
   <div class="content-card">
@@ -155,7 +119,7 @@ description: "Learn about the Multiplicity: Roads Not Taken project and its miss
         <div class="content-grid-card">
           <div class="content-principle-number">P</div>
           <div class="content-principle-title">Practicality</div>
-          <div class="content-principle-description">Real-world examples with implementable code in R and Python</div>
+          <div class="content-principle-description">Real-world examples with implementable code in R and/or Python</div>
         </div>
 
         <div class="content-grid-card">
@@ -167,7 +131,7 @@ description: "Learn about the Multiplicity: Roads Not Taken project and its miss
         <div class="content-grid-card">
           <div class="content-principle-number">I</div>
           <div class="content-principle-title">Interdisciplinary</div>
-          <div class="content-principle-description">Drawing insights from economics, epidemiology, computer science, and philosophy</div>
+          <div class="content-principle-description">Drawing insights from economics, psychology, political science, and more</div>
         </div>
       </div>
     </div>
@@ -180,10 +144,9 @@ description: "Learn about the Multiplicity: Roads Not Taken project and its miss
   <div class="content-grid">
     <div class="content-team-card">
       <div class="content-team-name">Feiran Zhang</div>
-      <div class="content-team-role">Project Founder & Lead</div>
+      <div class="content-team-role">Founder</div>
       <div class="content-team-bio">
-        <p>Former Ph.D. candidate in International and Development Economics with six years of graduate training in econometrics and causal inference methods.</p>
-        <p>Research interests include causal inference, program evaluation, development economics, and the intersection of statistical methods with real-world policy questions.</p>
+        <p>As someone who keeps pondering about the "what-ifs", I started this Project as a personal endeavor out of my passion for both education and research, simply to share knowledge about causal inference with a wider audience.</p>
       </div>
       <div class="content-team-contact">
         Contact: <a href="mailto:zephyr.v@outlook.com">zephyr.v@outlook.com</a>
