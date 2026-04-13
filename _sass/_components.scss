@@ -1924,12 +1924,12 @@
 // This media query handles the transition between mobile and tablet/desktop
 @media (max-width: #{$breakpoint-lg - 1px}) {
   .content-toc {
-    order: -2; // TOC appears first
+    order: -1; // TOC appears first
     margin-bottom: $spacing-6;
   }
 
   .sidebar {
-    order: -1; // Sidebar appears second, before content
+    order: 1; // Sidebar appears after content
     margin-bottom: $spacing-8;
   }
 }
