@@ -7,7 +7,7 @@ description: "An educational website on causal inference, exploring alternative 
 
 <div class="banner" id="banner">
   <div class="banner-content">
-    <h1 class="banner-title">Multiplicity: Roads Not Taken</h1>
+    <h1 class="banner-title">Multiplicity:<br>Roads Not Taken</h1>
     <div class="banner-typewriter" aria-live="polite">
       <span id="typewriter-text"></span>
       <span class="typewriter-cursor" aria-hidden="true"></span>
