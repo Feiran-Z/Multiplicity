@@ -129,7 +129,11 @@ function initScrollShrink(prefersReducedMotion) {
     if (!ticking) {
       window.requestAnimationFrame(() => {
         const scrollY = window.scrollY || window.pageYOffset;
-        const shrinkThreshold = 150; // pixels
+        const shrinkThreshold = 150; // pixels - increased for more gradual transition
+        const transitionStart = 50; // pixels - start transition earlier
+
+        // Smooth transition based on scroll position
+        const transitionProgress = Math.min(Math.max(scrollY - transitionStart, 0) / (shrinkThreshold - transitionStart), 1);
 
         if (scrollY > shrinkThreshold && !isShrunk) {
           banner.classList.add('banner--shrunk');
@@ -137,6 +141,31 @@ function initScrollShrink(prefersReducedMotion) {
         } else if (scrollY <= shrinkThreshold && isShrunk) {
           banner.classList.remove('banner--shrunk');
           isShrunk = false;
+        }
+
+        // Apply progressive opacity for smoother visual transition
+        const bannerNav = banner.querySelector('.banner-nav');
+        const bannerLogo = banner.querySelector('.banner-logo');
+        const bannerNavLinks = banner.querySelector('.banner-nav-links');
+
+        if (bannerNav && bannerLogo && bannerNavLinks) {
+          if (scrollY > transitionStart && scrollY <= shrinkThreshold) {
+            // During transition phase, gradually increase opacity
+            const opacity = Math.min(Math.max(scrollY - transitionStart, 0) / (shrinkThreshold - transitionStart), 1);
+            bannerNav.style.opacity = opacity;
+            bannerLogo.style.opacity = opacity;
+            bannerNavLinks.style.opacity = opacity;
+          } else if (scrollY > shrinkThreshold) {
+            // Fully visible after threshold
+            bannerNav.style.opacity = '1';
+            bannerLogo.style.opacity = '1';
+            bannerNavLinks.style.opacity = '1';
+          } else {
+            // Reset to CSS-controlled opacity when at top
+            bannerNav.style.opacity = '';
+            bannerLogo.style.opacity = '';
+            bannerNavLinks.style.opacity = '';
+          }
         }
 
         ticking = false;

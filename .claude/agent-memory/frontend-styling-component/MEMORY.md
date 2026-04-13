@@ -107,3 +107,11 @@
 - **Container Configuration**: `.container-sophisticated` with `max-width: 1400px` and responsive padding
 - **SCSS Compilation**: Builds successfully without errors
 - [3-column layout consistency review](3-column-layout-consistency-review.md) - Complete analysis of implementation consistency
+
+## Homepage Scrolling Animation Fix (2026-04-13)
+- **Problem**: Scroll-triggered banner shrink animation was too fast and abrupt
+- **Solution**: Extended transition durations from 300ms to 600ms, added progressive opacity control, improved content hiding with fade effects
+- **JavaScript Enhancement**: Added gradual opacity transitions during scroll (0-100px), lowered threshold for earlier animation start
+- **CSS Improvements**: Changed from `display: none` to `opacity: 0` + `visibility: hidden` with delayed hiding
+- **Files Modified**: `assets/css/main.scss`, `_sass/_main-bundle.scss`, `assets/js/home.js`, `_sass/_variables.scss`
+- [Homepage scrolling animation fix](homepage-scrolling-animation-fix.md) - Complete analysis and implementation details

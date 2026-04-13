@@ -22,8 +22,10 @@
   padding: $spacing-8;
   position: relative;
   overflow: hidden;
-  transition: height $transition-normal $transition-timing,
-              padding $transition-normal $transition-timing;
+  transition: height $transition-slow $transition-timing,
+              padding $transition-slow $transition-timing,
+              min-height $transition-slow $transition-timing,
+              background-color $transition-slow $transition-timing;
 
   @media (max-width: $breakpoint-sm) {
     min-height: 90vh;
@@ -35,6 +37,10 @@
   max-width: 800px;
   margin: 0 auto;
   z-index: 1;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity $transition-slow $transition-timing,
+              visibility 0s linear 0s;
 }
 
 .banner-title {
@@ -44,7 +50,7 @@
   line-height: $line-height-tight;
   margin-bottom: $spacing-6;
   color: white;
-  transition: font-size $transition-normal $transition-timing;
+  transition: font-size $transition-slow $transition-timing;
 
   @media (max-width: $breakpoint-sm) {
     font-size: $font-size-4xl;
@@ -96,7 +102,7 @@
   justify-content: space-between;
   align-items: center;
   opacity: 0;
-  transition: opacity $transition-normal $transition-timing;
+  transition: opacity $transition-slow $transition-timing;
   z-index: 2;
 
   @media (max-width: $breakpoint-lg) {
@@ -111,7 +117,7 @@
   color: white;
   text-decoration: none;
   opacity: 0;
-  transition: opacity $transition-normal $transition-timing;
+  transition: opacity $transition-slow $transition-timing;
 }
 
 .banner-nav-links {
@@ -121,7 +127,7 @@
   padding: 0;
   gap: $spacing-6;
   opacity: 0;
-  transition: opacity $transition-normal $transition-timing;
+  transition: opacity $transition-slow $transition-timing;
 
   @media (max-width: $breakpoint-lg) {
     display: none;
@@ -134,7 +140,7 @@
   font-weight: $font-weight-medium;
   color: white;
   text-decoration: none;
-  transition: color $transition-normal $transition-timing;
+  transition: color $transition-slow $transition-timing;
 
   &:hover {
     color: rgba(white, 0.8);
@@ -143,17 +149,22 @@
 
 // Banner shrunk state
 .banner--shrunk {
-  height: 70px;
-  min-height: 70px;
+  height: 80px;
+  min-height: 80px;
   padding: 0;
+  background-color: rgba($color-primary, 0.95);
 
   .banner-content {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity $transition-slow $transition-timing,
+                visibility 0s linear $transition-slow;
   }
 
   .banner-title {
     font-size: $font-size-xl;
     margin: 0;
+    transition: font-size $transition-slow $transition-timing;
   }
 
   .banner-nav {
@@ -179,7 +190,7 @@
   font-size: $font-size-sm;
   text-align: center;
   opacity: 1;
-  transition: opacity $transition-normal $transition-timing;
+  transition: opacity $transition-slow $transition-timing;
 
   @media (prefers-reduced-motion: reduce) {
     display: none;
