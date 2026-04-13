@@ -115,3 +115,11 @@
 - **CSS Improvements**: Changed from `display: none` to `opacity: 0` + `visibility: hidden` with delayed hiding
 - **Files Modified**: `assets/css/main.scss`, `_sass/_main-bundle.scss`, `assets/js/home.js`, `_sass/_variables.scss`
 - [Homepage scrolling animation fix](homepage-scrolling-animation-fix.md) - Complete analysis and implementation details
+
+## 3-Column Layout Mobile Ordering Fix (2026-04-13)
+- **Mobile Ordering**: Fixed to ensure TOC comes before content, sidebar after content on mobile screens (<1024px)
+- **CSS Implementation**: Added `order` properties to `.layout-grid` children: TOC (-1), Content (0), Sidebar (1)
+- **Desktop Reset**: Reset ordering to 0 in desktop media query to maintain 3-column layout
+- **Navigation Button**: TOC toggle functionality works via `sophisticated-layout.js` with proper ARIA attributes
+- **Files Modified**: `_sass/_components.scss` (layout-grid and mobile stacking sections)
+- [3-column layout ordering fix](3-column-layout-ordering-fix.md) - Details of mobile ordering implementation
