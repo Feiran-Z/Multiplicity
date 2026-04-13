@@ -1421,13 +1421,13 @@
   gap: $spacing-8;
   grid-template-columns: 1fr;
 
-  // Activate 3-column layout at 768px for better tablet support
-  @media (min-width: $breakpoint-md) {
+  // Activate 3-column layout at 1024px (desktop)
+  @media (min-width: $breakpoint-lg) {
     // Three-column layout with 1:3:1 ratio (TOC:Content:Sidebar)
     // Using minmax() with flexible constraints for better responsiveness
-    // TOC/Sidebar: min 80px (accounts for padding/borders)
-    // Content: 600px for optimal reading width
-    grid-template-columns: minmax(80px, 0.5fr) 600px minmax(80px, 0.5fr);
+    // TOC/Sidebar: min 100px (accounts for padding/borders)
+    // Content: 800px for optimal reading width
+    grid-template-columns: minmax(100px, 0.5fr) 800px minmax(100px, 0.5fr);
     gap: $spacing-10;
 
     // Explicitly place grid items in their columns
@@ -1500,7 +1500,7 @@
   width: 100%;
   box-sizing: border-box;
 
-  @media (min-width: $breakpoint-md) {
+  @media (min-width: $breakpoint-lg) {
     position: -webkit-sticky;
     position: sticky;
     top: $spacing-8;
@@ -1515,7 +1515,7 @@
     padding: $spacing-6; // Restore full padding on larger screens
   }
 
-  @media (max-width: #{$breakpoint-md - 1px}) {
+  @media (max-width: #{$breakpoint-lg - 1px}) {
     position: static;
     max-height: none;
     width: 100%;
@@ -1719,11 +1719,11 @@
   width: 100%;
   box-sizing: border-box;
 
-  @media (min-width: $breakpoint-md) {
+  @media (min-width: $breakpoint-lg) {
     min-width: 0;
   }
 
-  @media (max-width: #{$breakpoint-md - 1px}) {
+  @media (max-width: #{$breakpoint-lg - 1px}) {
     margin-bottom: $spacing-8;
     width: 100%;
   }
@@ -1743,7 +1743,7 @@
   }
 
   @media (min-width: $breakpoint-md) and (max-width: #{$breakpoint-lg - 1px}) {
-    padding: $spacing-5; // Reduced padding for medium screens
+    padding: $spacing-5; // Reduced padding for medium screens (768px-1023px)
   }
 
   @media (max-width: $breakpoint-sm) {
@@ -1920,9 +1920,9 @@
 }
 
 // Mobile stacking for screens below the 3-column layout breakpoint
-// Note: The 3-column layout activates at $breakpoint-md (768px)
+// Note: The 3-column layout activates at $breakpoint-lg (1024px)
 // This media query handles the transition between mobile and tablet/desktop
-@media (max-width: #{$breakpoint-md - 1px}) {
+@media (max-width: #{$breakpoint-lg - 1px}) {
   .content-toc {
     order: -2; // TOC appears first
     margin-bottom: $spacing-6;
@@ -1935,9 +1935,9 @@
 }
 
 // Note: Grid column placement is now handled within .layout-grid media query
-// The 3-column layout activates at $breakpoint-md (768px) for better tablet support
+// The 3-column layout activates at $breakpoint-lg (1024px) for desktop
 
-@media (max-width: $breakpoint-sm) {
+@media (max-width: $breakpoint-md) {
   .sophisticated-layout {
     padding: $spacing-4 0 $spacing-8;
   }
