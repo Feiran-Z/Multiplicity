@@ -1417,7 +1417,7 @@
 
 // Sophisticated layout grid system (1:3:1 ratio)
 .layout-grid {
-  display: grid;
+  display: flex;
   gap: $spacing-8;
   grid-template-columns: 1fr;
 
